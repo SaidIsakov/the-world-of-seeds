@@ -1,0 +1,38 @@
+{% load static %}
+<footer class="simple-footer">
+    <div class="footer-container">
+        <!-- Social Media Links -->
+        <div class="social-section">
+            <a href="#" class="social-link" onclick="handleSocialClick('Telegram')">
+                <span class="social-icon">
+                    <i class="fab fa-telegram"></i>
+                </span>
+                <span>Telegram</span>
+            </a>
+            <a href="#" class="social-link" onclick="handleSocialClick('WhatsApp')">
+                <span class="social-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </span>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+
+        <!-- Company Links -->
+        <div class="company-section">
+            <h3 class="company-title">О компании</h3>
+            <ul class="company-links">
+                <li><a href="#" onclick="handleLinkClick('О нас')">О нас</a></li>
+                <li><a href="#" onclick="handleLinkClick('Политика конфиденциальности')">Политика конфиденциальности</a></li>
+                <li><a href="#" onclick="handleLinkClick('Пользовательское соглашение')">Пользовательское соглашение</a></li>
+                <li><a href="#" onclick="handleLinkClick('Производители')">Производители</a></li>
+                <li><a href="#" onclick="handleLinkClick('Доставка')">Доставка</a></li>
+                <li><a href="#" onclick="handleLinkClick('Контакты')">Контакты</a></li>
+                <li><a href="#" onclick="handleLinkClick('Блог')">Блог</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <!-- Добавьте эту ссылку на Font Awesome в head вашего документа -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</footer>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<main class="main-content">
+{% block main %}
+    <main class="main-content">
+
+    <!-- Hero Section -->
+     {% include "main/components/__hero.html" %}
+
+     <!-- Popular Products Section -->
+      {% include "main/components/popular-products.html" %}
+
+      <!-- Popular Categories -->
+      {% include "main/components/popular-categories.html" %}
+
+    </main>
+{% endblock main %}

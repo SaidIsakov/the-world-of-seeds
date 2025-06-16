@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static "main/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/hero.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/popular-products.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/popular-categories.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/prod_detail.css" %}">
+
+    <!-- JS -->
+     <script src="{% static "main/js/navigation.js" %}"></script>
+</head>
+
+
+<!-- Top Header -->
+    {% include "components/__header.html" %}
+
+<!-- Main Navigation -->
+    {% include "components/__navigation.html" %}
+
+    <main>
+        {% block main %}
+
+        {% endblock main %}
+    </main>
+
+<!-- Footer -->
+    {% include "components/__footer.html" %}
