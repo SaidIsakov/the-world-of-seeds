@@ -1,0 +1,57 @@
+[
+    {
+        "model": "main.category",
+        "pk": 1,
+        "fields": {
+            "title": "Семена",
+            "image": "",
+            "slug": "semena",
+            "parent": null,
+            "popular_category": false
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 2,
+        "fields": {
+            "title": "Томаты",
+            "image": "",
+            "slug": "tomaty",
+            "parent": 1,
+            "popular_category": false
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 3,
+        "fields": {
+            "title": "Средства защиты растений",
+            "image": "",
+            "slug": "sredstva-zashity-rastenij",
+            "parent": null,
+            "popular_category": false
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 4,
+        "fields": {
+            "title": "Средства от болезней",
+            "image": "",
+            "slug": "sredstva-ot-boleznej",
+            "parent": 3,
+            "popular_category": false
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 5,
+        "fields": {
+            "title": "Огурец",
+            "image": "",
+            "slug": "ogurec",
+            "parent": 1,
+            "popular_category": false
+        }
+    }
+]

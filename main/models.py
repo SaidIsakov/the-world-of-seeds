@@ -3,6 +3,9 @@ from django.urls import reverse
 # Create your models here.
 
 class Category(models.Model):
+    
+    
+    
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='categories/', null=True, blank=True)
     slug = models.SlugField(unique=True)
@@ -22,14 +25,25 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
+        
+    def get_parent_category_image(self):
+        """ Для получения родительской фотки """
+        if self.image:
+            return self.image.url
+        else:
+            pass
+        
+    def get_subcategory_image(self):
+        pass
     
 class Product(models.Model):
     title = models.CharField(max_length=50, unique=True)
     manufacturer = models.CharField(max_length=50)
-    quantity = models.IntegerField(default=0)
+    quantity = models.TextField(blank=True, null=True)
     price = models.FloatField()
     discription = models.TextField(max_length=5000, null=True, blank=True)
     additional_information = models.TextField(max_length=1000, null=True, blank=True)
+    availability = models.BooleanField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='products')
     slug = models.SlugField(unique=True, null=True)
@@ -40,6 +54,7 @@ class Product(models.Model):
         return self.title
     
     def get_absolute_url(self):
+        """ Выводит на конкректный продукт """
         return reverse('product_detail', kwargs={'slug':self.slug})
     
     def __repr__(self):

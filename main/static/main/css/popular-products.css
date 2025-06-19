@@ -166,12 +166,14 @@
             margin-bottom: 5px;
         }
 
-        .grid-product-name {
+        .grid-product-name a{
             font-weight: bold;
             margin-bottom: 5px;
             color: #333;
-            
+            text-decoration: none;
         }
+
+        
 
         .grid-product-price {
             color: #4a6cf7;

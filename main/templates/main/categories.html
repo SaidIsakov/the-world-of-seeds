@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+     <main class="catalog-container">
+        <h1 class="catalog-title">Каталог товаров</h1>
+        
+        <div class="categories-grid">
+            {% for category in categories %}
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="{{ category.get_parent_category_image }}" alt="xcxc">
+                </div>
+                <div class="category-info">
+                    <h3 class="category-name">{{ category.title }}</h3>
+                    <p class="category-description">{{ category.description }}</p>
+                    <a href="#" class="category-link">Перейти</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>   
+{% endblock main %}

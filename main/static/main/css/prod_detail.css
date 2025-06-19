@@ -70,7 +70,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .thumbnail:hover,
+
         .thumbnail.active {
             border-color: #4a6cf7;
         }
@@ -80,6 +80,7 @@
             height: 100%;
             object-fit: cover;
         }
+        
 
         /* Main Product Image */
         .main-image-container {
@@ -421,3 +422,7 @@
                 font-size: 24px;
             }
         }
+
+        
+        
+

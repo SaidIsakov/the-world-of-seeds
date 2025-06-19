@@ -1,76 +1,59 @@
 {% extends "base.html" %}
 
+{% block main %}
 <main class="main-content">
         <div class="product-container">
             <!-- Product Images -->
             <div class="product-images">
+                {% for image in product.images.all %}
                 <div class="thumbnail active">
-                    <img src="/placeholder.svg?height=80&width=80" alt="Томат розетт 1">
+                    <img src="{{ image.image.url }}" alt="Томат розетт 1">
                 </div>
-                <div class="thumbnail">
-                    <img src="/placeholder.svg?height=80&width=80" alt="Томат розетт 2">
-                </div>
-                <div class="thumbnail">
-                    <img src="/placeholder.svg?height=80&width=80" alt="Томат розетт 3">
-                </div>
-                <div class="thumbnail">
-                    <img src="/placeholder.svg?height=80&width=80" alt="Томат розетт 4">
-                </div>
+                {% endfor %}
             </div>
 
             <!-- Main Image -->
             <div class="main-image-container">
-                <div class="discount-badge">СКИДКА 21 %</div>
-                <img src="/placeholder.svg?height=400&width=500" alt="Семена томат розетт" class="main-image" id="mainImage">
+                {% comment %} <div class="discount-badge">СКИДКА 21 %</div> {% endcomment %}
+                <img src="{{ product.get_first_photo }}" class="main-image" id="mainProductImage">
             </div>
 
             <!-- Product Info -->
             <div class="product-info">
-                <div class="product-code">63127</div>
+                {% comment %} <div class="product-code">63127</div> {% endcomment %}
+                
+                {% if product.availability %}
                 <div class="stock-status">
                     ✓ На складе
                 </div>
-                <div class="brand">Esasem (Италия)</div>
+                {% else %}
+                <div class="stock-status">
+                    ❌ Нет в наличии
+                </div>
+                {% endif %}
+
+                <div class="brand">{{ product.manufacturer }}</div>
                 
-                <h1 class="product-title">Семена томат розетт (tl 18304) f1 / rozett (tl 18304) f1</h1>
+                <h1 class="product-title">{{ product.title }}</h1>
                 
                 <div class="package-options">
-                    <div class="package-label">Фасовка *</div>
-                    <div class="package-option" onclick="selectPackage(this, 1000, 9400)">
+                    <div class="package-label">Фасовка</div>
+                    <div class="package-option">
                         <div class="package-radio selected"></div>
-                        <span class="package-text">1000 семян</span>
-                    </div>
-                    <div class="package-option" onclick="selectPackage(this, 500, 4700)">
-                        <div class="package-radio"></div>
-                        <span class="package-text">500 семян</span>
-                    </div>
-                    <div class="package-option" onclick="selectPackage(this, 250, 2350)">
-                        <div class="package-radio"></div>
-                        <span class="package-text">250 семян</span>
+                        <span class="package-text">{{ product.quantity }}</span>
                     </div>
                 </div>
                 
-                <div class="price-section">
-                    <span class="current-price" id="currentPrice">9400 ₽</span>
-                    <span class="original-price" id="originalPrice">11946 ₽</span>
-                </div>
+                 <div class="price-section">
+                    <span class="current-price">{{ product.price }} ₽</span>
+                </div> 
                 
                 <div class="purchase-section">
                     <div class="quantity-section">
-                        <div class="quantity-controls">
-                            <button class="quantity-btn" onclick="changeQuantity(-1)">−</button>
-                            <input type="number" class="quantity-input" value="1" min="1" id="quantity">
-                            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
-                        </div>
-                        
-                        <button class="buy-button" onclick="addToCart()">
+                        {% comment %} <button class="buy-button" onclick="addToCart()">
                             🛒 КУПИТЬ
-                        </button>
+                        </button> {% endcomment %}
                     </div>
-                    
-                    <button class="one-click-buy" onclick="buyOneClick()">
-                        Купить в один клик
-                    </button>
                 </div>
             </div>
         </div>
@@ -79,36 +62,14 @@
         <div class="product-description">
             <h2 class="description-title">Описание товара</h2>
             <div class="description-content">
-                <p>Высокоурожайный индетерминантный гибрид томата розового цвета. Плоды крупные, мясистые, с отличными вкусовыми качествами. Подходит для выращивания в теплицах и открытом грунте.</p>
-                
-                <p>Растение сильнорослое, требует подвязки и формирования. Плоды округлые, слегка приплюснутые, массой 200-300 грамм. Мякоть плотная, сочная, с небольшим количеством семян.</p>
-            </div>
-            
-            <ul class="features-list">
-                <li>
-                    <span class="feature-name">Тип растения:</span>
-                    <span class="feature-value">Индетерминантный</span>
-                </li>
-                <li>
-                    <span class="feature-name">Срок созревания:</span>
-                    <span class="feature-value">Среднеранний (110-115 дней)</span>
-                </li>
-                <li>
-                    <span class="feature-name">Масса плода:</span>
-                    <span class="feature-value">200-300 г</span>
-                </li>
-                <li>
-                    <span class="feature-name">Цвет плода:</span>
-                    <span class="feature-value">Розовый</span>
-                </li>
-                <li>
-                    <span class="feature-name">Урожайность:</span>
-                    <span class="feature-value">До 12 кг/м²</span>
-                </li>
-                <li>
-                    <span class="feature-name">Производитель:</span>
-                    <span class="feature-value">Esasem (Италия)</span>
-                </li>
-            </ul>
+                <p>{{ product.discription }}</p>
+                <h2 class="description-title">Дополнительная информация</h2>
+                <p>{{ product.additional_information }}</p>
+            </div> 
         </div>
+
+        {% comment %}  {% endcomment %}
+        
+
     </main>
+{% endblock main %}
