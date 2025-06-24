@@ -3,18 +3,14 @@ from django.urls import reverse
 # Create your models here.
 
 class Category(models.Model):
-    
-    
-    
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to='categories/', null=True, blank=True)
     slug = models.SlugField(unique=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE,
-                               null=True, blank=True,related_name='subcategories')
-    popular_category = models.BooleanField()
+    is_popular_category = models.BooleanField()
     
     def get_absolute_url(self):
-        pass
+        return reverse('get_subcategories', kwargs={'slug':self.slug})
+    
     
     def __str__(self):
         return self.title
@@ -36,6 +32,24 @@ class Category(models.Model):
     def get_subcategory_image(self):
         pass
     
+class Subcategory(models.Model):
+    title = models.CharField(max_length=50, unique=True)
+    image = models.ImageField(upload_to='subcategories/')   
+    is_popular_subcategory = models.BooleanField()
+    slug = models.SlugField(unique=True)
+    subcategory_category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='subcategories')
+    
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse('get_products', kwargs={'slug':self.slug})
+    
+    
+    class Meta:
+        verbose_name = 'subcategory'
+        verbose_name_plural = 'subcategories'
+    
 class Product(models.Model):
     title = models.CharField(max_length=50, unique=True)
     manufacturer = models.CharField(max_length=50)
@@ -46,6 +60,8 @@ class Product(models.Model):
     availability = models.BooleanField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='products')
+    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name='products')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='categories')
     slug = models.SlugField(unique=True, null=True)
     is_popular_product = models.BooleanField()
     is_hero_product = models.BooleanField()
@@ -54,8 +70,8 @@ class Product(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        """ Выводит на конкректный продукт """
         return reverse('product_detail', kwargs={'slug':self.slug})
+    
     
     def __repr__(self):
         return f'Товар: pk={self.pk}, title={self.title} price={self.price}'
@@ -65,11 +81,11 @@ class Product(models.Model):
         if self.images.first():
             return self.images.first().image.url
         
-    
-    
+            
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
+        
         
 class Gallery(models.Model):
     image = models.ImageField(upload_to='products/')

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Category, Product, Gallery
+from .models import Category, Product, Gallery, Subcategory
 from django.shortcuts import get_object_or_404
 
 
@@ -8,7 +8,7 @@ def index(request):
     is_popular_products = Product.objects.filter(is_popular_product=True)
     is_hero_products = Product.objects.filter(is_hero_product=True)
     categories = Category.objects.all()
-    subcategories = Category.objects.filter(parent=True)
+    subcategories = Subcategory.objects.filter(is_popular_subcategory=True)
     
     context = {
         'is_popular_products':is_popular_products,
@@ -31,11 +31,33 @@ def product_detail(request, slug):
     return render(request, 'main/product_detail.html', context)
 
 def get_categories(request):
-    categories = Category.objects.filter(parent=None)
+    """ Возращает категории на отдельной странице """
+    categories = Category.objects.all()
     
     context = {
-        'title': 'Каталог товаров',
-        'categories': categories
+        'title': 'Каталог',
+        'categories':categories
     }
-    
     return render(request, 'main/categories.html', context)
+
+def get_subcategories(request,slug):
+    """ Возращает подкатегории по категории """
+    category = get_object_or_404(Category, slug=slug)
+    subcategories = category.subcategories.all()
+        
+    context = {
+        'title':category.title,
+        'subcategories':subcategories
+    }
+    return render(request, 'main/subcategories.html', context)
+
+def get_products(request, slug):
+    """ Выводит на отдельной странице продукты подкатегории """
+    subcategory = Subcategory.objects.get(slug=slug)
+    products = subcategory.products.all()
+    
+    context = {
+        'title':subcategory.title,
+        'products':products
+    }
+    return render(request, 'main/product_list.html', context)

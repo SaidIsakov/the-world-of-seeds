@@ -4,21 +4,19 @@
         "pk": 1,
         "fields": {
             "title": "Семена",
-            "image": "",
+            "image": "categories/seeds-img.jpg",
             "slug": "semena",
-            "parent": null,
-            "popular_category": false
+            "is_popular_category": false
         }
     },
     {
         "model": "main.category",
         "pk": 2,
         "fields": {
-            "title": "Томаты",
-            "image": "",
-            "slug": "tomaty",
-            "parent": 1,
-            "popular_category": false
+            "title": "Удобрения",
+            "image": "categories/fertilizers-img.jpg",
+            "slug": "udobreniya",
+            "is_popular_category": false
         }
     },
     {
@@ -26,32 +24,9 @@
         "pk": 3,
         "fields": {
             "title": "Средства защиты растений",
-            "image": "",
+            "image": "categories/protect-for-agro.webp",
             "slug": "sredstva-zashity-rastenij",
-            "parent": null,
-            "popular_category": false
-        }
-    },
-    {
-        "model": "main.category",
-        "pk": 4,
-        "fields": {
-            "title": "Средства от болезней",
-            "image": "",
-            "slug": "sredstva-ot-boleznej",
-            "parent": 3,
-            "popular_category": false
-        }
-    },
-    {
-        "model": "main.category",
-        "pk": 5,
-        "fields": {
-            "title": "Огурец",
-            "image": "",
-            "slug": "ogurec",
-            "parent": 1,
-            "popular_category": false
+            "is_popular_category": false
         }
     }
 ]
