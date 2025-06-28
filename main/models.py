@@ -43,7 +43,7 @@ class Subcategory(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('get_products', kwargs={'slug':self.slug})
+        return reverse('get_products_list', kwargs={'slug':self.slug})
     
     
     class Meta:

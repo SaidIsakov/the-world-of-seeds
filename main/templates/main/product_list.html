@@ -1,5 +1,30 @@
 {% extends "base.html" %}
 
 {% block main %}
-
+<div class="container">
+    <div class="products-list-grid">
+        {% for product in products %}
+        <div class="product-list-card">
+            <div class="product-list-image-container">
+                <a href="{{ product.get_absolute_url }}">
+                <img src="{{ product.get_first_photo }}" alt="{{ product.title }}" class="product-list-image">
+                {% if product.discount %}
+                <div class="discount-badge">-{{ product.discount }}%</div>
+                {% endif %}
+            </div> 
+            <div class="product-list-info">
+                <div class="product-list-brand">{{ product.manufacturer }}</div>
+                <div class="product-list-title">{{ product.title }}</div>
+                <div class="product-list-price">
+                    {% if product.old_price %}
+                    <span class="old-price">{{ product.old_price }} ₽</span>
+                    {% endif %}
+                    <span class="current-price">{{ product.price }} ₽</span>
+                </div>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
 {% endblock main %}

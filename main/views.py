@@ -7,14 +7,14 @@ from django.shortcuts import get_object_or_404
 def index(request):
     is_popular_products = Product.objects.filter(is_popular_product=True)
     is_hero_products = Product.objects.filter(is_hero_product=True)
-    categories = Category.objects.all()
+    #categories = Category.objects.all()
     subcategories = Subcategory.objects.filter(is_popular_subcategory=True)
     
     context = {
         'is_popular_products':is_popular_products,
         'is_hero_products': is_hero_products,
         'title':'Главная',
-        'categories':categories,
+        #'categories':categories,
         'subcategories':subcategories
     }
     
@@ -51,7 +51,7 @@ def get_subcategories(request,slug):
     }
     return render(request, 'main/subcategories.html', context)
 
-def get_products(request, slug):
+def get_products_list(request, slug):
     """ Выводит на отдельной странице продукты подкатегории """
     subcategory = Subcategory.objects.get(slug=slug)
     products = subcategory.products.all()

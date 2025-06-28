@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'main',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'main/static'
+    BASE_DIR / 'main/static',
+    BASE_DIR / 'news/static',
 ]
 
 MEDIA_URL = '/media/'

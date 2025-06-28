@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+    <main class="main-content">
+        <h1 class="page-title">Новости</h1>
+        <div class="news-list">
+            <!-- News Item 1 -->
+            {% for new in news %}
+            <article class="news-card">
+                <img src="{{ new.image.url }}" alt="Акция на семена овощей" class="news-image">
+                <div class="news-content">
+                    <a href="#" class="news-title">{{ new.title }}</a>
+                    <p class="news-excerpt">
+                        {{ new.text }}
+                    </p>
+                    <div class="news-date">
+                        <span class="news-date-icon">📅</span>
+                        <span>{{ new.created_at }}</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock main %}

@@ -1,106 +1,106 @@
 .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        margin-top: 60px;
-        padding: 0 20px;
-    }
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 0 20px;
+}
 
-    .section-title-categories {
-        font-size: 2.2rem;
-        color: #333;
-        text-align: center;
-        margin-bottom: 40px;
-        font-weight: 600;
-    }
+.section-title-categories {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
 
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.category-item {
+    text-align: center;
+    transition: all 0.3s ease;
+    background: white;
+    border-radius: 16px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-item:hover .category-image {
+    transform: scale(1.05);
+}
+
+.category-title-wrapper {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    background: white;
+}
+
+.category-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.category-description {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 8px;
+}
+
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 20px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+.categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.section-title-categories {
+    font-size: 1.8rem;
+}
+
+.category-image {
+    height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
     .categories-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
-    }
+    grid-template-columns: 1fr;
+}
 
-    .category-item {
-        text-align: center;
-        transition: all 0.3s ease;
-        background: white;
-        border-radius: 16px;
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        position: relative;
-    }
-
-    .category-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .category-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .category-item:hover .category-image {
-        transform: scale(1.05);
-    }
-
-    .category-title-wrapper {
-        padding: 20px;
-        position: relative;
-        z-index: 2;
-        background: white;
-    }
-
-    .category-title {
-        font-size: 1.3rem;
-        color: #2c3e50;
-        font-weight: 600;
-        margin: 0;
-        text-decoration: none;
-        display: block;
-    }
-
-    .category-description {
-        font-size: 0.9rem;
-        color: #7f8c8d;
-        margin-top: 8px;
-    }
-
-    .category-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-        padding: 20px;
-        color: white;
-    }
-
-    @media (max-width: 768px) {
-        .categories-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .section-title-categories {
-            font-size: 1.8rem;
-        }
-        
-        .category-image {
-            height: 180px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .categories-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .category-image {
-            height: 220px;
-        }
-    }
+.category-image {
+    height: 220px;
+}
+}

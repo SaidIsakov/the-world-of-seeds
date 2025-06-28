@@ -1,0 +1,132 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.products-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;  /* Уменьшенный gap */
+}
+
+.product-list-card {
+    background: white;
+    border-radius: 6px;  /* Уменьшено с 8px */
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);  /* Уменьшена тень */
+    position: relative;
+    transition: all 0.2s ease;  /* Уменьшено время анимации */
+    margin: 10px 0;  /* Уменьшены отступы */
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.product-list-card:hover {
+    transform: translateY(-2px);  /* Уменьшено смещение */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);  /* Уменьшена тень */
+}
+
+.discount-badge {
+    position: absolute;
+    top: 8px;  /* Уменьшено */
+    left: 8px;  /* Уменьшено */
+    background: #8bc34a;
+    color: white;
+    padding: 3px 6px;  /* Уменьшено */
+    border-radius: 10px;  /* Уменьшено */
+    font-size: 10px;  /* Уменьшено */
+    font-weight: 600;
+    z-index: 2;
+}
+
+.product-list-image-container {
+    width: 100%;
+    height: 140px;  /* Уменьшено с 160px */
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-list-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;  /* Уменьшено время анимации */
+}
+
+.product-list-card:hover .product-list-image {
+    transform: scale(1.02);  /* Уменьшено увеличение */
+}
+
+.product-list-info {
+    padding: 8px;  /* Уменьшено с 12px */
+}
+
+.product-list-brand {
+    font-size: 10px;  /* Уменьшено с 11px */
+    color: #999;
+    margin-bottom: 4px;  /* Уменьшено */
+    font-weight: 400;
+}
+
+.product-list-title {
+    font-size: 12px;  /* Уменьшено с 14px */
+    font-weight: 600;
+    margin-bottom: 8px;  /* Уменьшено */
+    color: #333;
+    line-height: 1.2;  /* Уменьшено */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-list-price {
+    display: flex;
+    align-items: center;
+    gap: 6px;  /* Уменьшено с 8px */
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+.current-price {
+    font-size: 14px;  /* Уменьшено с 16px */
+    font-weight: 700;
+    color: #4285f4;
+}
+
+.old-price {
+    font-size: 11px;  /* Уменьшено с 13px */
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .products-list-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .products-list-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-list-card {
+        max-width: 180px;  /* Ограничение ширины на мобильных */
+        margin: 10px auto;  /* Центрирование */
+    }
+}

@@ -15,18 +15,3 @@
     </div>
 </div>
 {% endblock main %}
-
-
-<div class="container">
-    <h1 class="section-title-categories">Популярные категории</h1>
-    <div class="categories-grid">
-        {% for subcategory in subcategories %}
-        <a href="{{ subcategory.get_absolute_url }}" class="category-item" title="{{ subcategory.name }}">
-            <img class="category-image" src="{{ subcategory.image.url }}" alt="{{ subcategory.name }} ">
-            <div class="category-title-wrapper">
-                <h3 class="category-title">{{ subcategory.title }}</h3>
-            </div>
-        </a>
-        {% endfor %}
-    </div>
-</div>

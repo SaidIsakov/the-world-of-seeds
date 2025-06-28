@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "title": "Арбуз",
-            "image": "subcategories/photo_2024-09-26_22-01-23.jpg",
+            "image": "subcategories/melon.webp",
             "is_popular_subcategory": true,
             "slug": "arbuz",
             "subcategory_category": 1
@@ -26,7 +26,7 @@
         "pk": 3,
         "fields": {
             "title": "Огурец",
-            "image": "subcategories/photo_2024-11-05_14-19-17.jpg",
+            "image": "subcategories/cucumber.jpg",
             "is_popular_subcategory": true,
             "slug": "ogurec",
             "subcategory_category": 1
@@ -37,8 +37,8 @@
         "pk": 4,
         "fields": {
             "title": "Средства от вредителей",
-            "image": "subcategories/bmw8.webp",
-            "is_popular_subcategory": false,
+            "image": "subcategories/The-pest.webp",
+            "is_popular_subcategory": true,
             "slug": "sredstva-ot-vreditelej",
             "subcategory_category": 3
         }
@@ -48,8 +48,8 @@
         "pk": 5,
         "fields": {
             "title": "Средства от болезней",
-            "image": "subcategories/1200x900.webp",
-            "is_popular_subcategory": true,
+            "image": "subcategories/disease.JPG",
+            "is_popular_subcategory": false,
             "slug": "sredstva-ot-boleznej",
             "subcategory_category": 3
         }
