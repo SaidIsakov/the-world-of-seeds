@@ -53,5 +53,27 @@
             "slug": "sredstva-ot-boleznej",
             "subcategory_category": 3
         }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 6,
+        "fields": {
+            "title": "Комплексные удобрения",
+            "image": "subcategories/комлексное.jpg",
+            "is_popular_subcategory": false,
+            "slug": "kompleksnye-udobreniya",
+            "subcategory_category": 2
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 7,
+        "fields": {
+            "title": "Стимуляторы и антистрессанты",
+            "image": "subcategories/stimulator-antis.png",
+            "is_popular_subcategory": true,
+            "slug": "stimulyatory-i-antistressanty",
+            "subcategory_category": 2
+        }
     }
 ]

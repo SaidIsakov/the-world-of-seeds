@@ -7,14 +7,12 @@ from django.shortcuts import get_object_or_404
 def index(request):
     is_popular_products = Product.objects.filter(is_popular_product=True)
     is_hero_products = Product.objects.filter(is_hero_product=True)
-    #categories = Category.objects.all()
     subcategories = Subcategory.objects.filter(is_popular_subcategory=True)
     
     context = {
         'is_popular_products':is_popular_products,
         'is_hero_products': is_hero_products,
         'title':'Главная',
-        #'categories':categories,
         'subcategories':subcategories
     }
     

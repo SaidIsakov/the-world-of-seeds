@@ -28,5 +28,15 @@
             "slug": "sredstva-zashity-rastenij",
             "is_popular_category": false
         }
+    },
+    {
+        "model": "main.category",
+        "pk": 4,
+        "fields": {
+            "title": "Инструменты",
+            "image": "categories/instruments.jpg",
+            "slug": "instrumenty",
+            "is_popular_category": false
+        }
     }
 ]
