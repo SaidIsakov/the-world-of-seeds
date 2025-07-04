@@ -1,18 +1,30 @@
-
+{% load static %}
     <header class="top-header">
         <div class="top-header-content">
             <div class="logo">
                 <div class="logo-icon">
-                    <a href="{% url "index" %}">🌱</a>
+                    <a href="{% url "index" %}">
+                        <img class="logo-img" src="{% static "main/img/Logo-icon.png" %}">    
+                    </a>
                 </div>
-                <a href="{% url "index" %}">Мир семян </a>
+                {% comment %} <a href="{% url "index" %}">Мир семян </a> {% endcomment %}
             </div>
             
             <div class="search-section">
-                <input type="text" class="search-input" placeholder="Что будем искать">
-                <button class="search-btn">🔍</button>
+                <input 
+                type="text"
+                class="search-input"
+                placeholder="Что будем искать"
+                hx-get="{% url 'search_results' %}"
+                hx-trigger="keyup changed delay:300ms"
+                hx-target="#search-results"
+                hx-swap="innerHTML"
+                name="q">
+                <p class="search-btn">🔍</p>
             </div>
-            
+        <div id="search-results" class="search-results-container">
+        {% include "components/search_results.html" %}
+        </div>
             <div class="header-info">
                 <div>
                     <div class="phone-number">+7 (918) 311 90 25</div>

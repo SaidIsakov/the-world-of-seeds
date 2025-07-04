@@ -1,0 +1,16 @@
+<div class="search-section-container">
+    <ul class="search-results-list">
+        {% for product in result %}
+        <li>
+            <a class="search-results-item" href="{{ product.get_absolute_url }}">
+            <div class="search-result-img">
+                <img src="{{ product.get_first_photo }}">
+            </div>
+            <div class="search-result-content">
+                <p class="search-result-title">{{ product.title }}</p>
+                <p class="search-result-price">{{ product.price }}₽</p>
+            </div>
+        </a>
+    </li>
+        {% endfor %}
+</div>

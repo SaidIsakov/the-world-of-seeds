@@ -57,8 +57,6 @@ class Product(models.Model):
     price = models.FloatField()
     discription = models.TextField(max_length=5000, null=True, blank=True)
     additional_information = models.TextField(max_length=1000, null=True, blank=True)
-    first_discription_photo = models.ImageField(blank=True, null=True, upload_to='first_discription_photo/')
-    second_discription_photo = models.ImageField(blank=True, null=True, upload_to='second_discription_photo/')
     availability = models.BooleanField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='products')
@@ -98,3 +96,8 @@ class Gallery(models.Model):
     class Meta:
         verbose_name = 'Image'
         verbose_name_plural = 'Images'
+
+
+class DescriptionImage(models.Model):
+    decription_image = models.ImageField(upload_to='descriptoin_image')
+    products = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='decription_images')

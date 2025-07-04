@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 class New(models.Model):
@@ -15,4 +15,6 @@ class New(models.Model):
     class Meta:
         verbose_name = 'New'
         verbose_name_plural = 'News'
+    
+    
     

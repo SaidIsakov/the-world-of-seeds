@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Category, Product, Gallery, Subcategory
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
 
 
 # Create your views here.
@@ -59,3 +60,21 @@ def get_products_list(request, slug):
         'products':products
     }
     return render(request, 'main/product_list.html', context)
+
+def search_results(request):
+    """ Ищет товары по названию """
+    query = request.GET.get('q', '')
+    if query:
+        result = Product.objects.filter(title__icontains=query)[:5]
+    else:
+        result = []
+        
+    context = {
+        'result':result,
+        'query':query
+    }
+    return render(request, 'components/search_results.html', context)
+
+def about_us(request):
+    """ Выводит на страницу 'о нас' """
+    return render(request, 'main/about_us.html')

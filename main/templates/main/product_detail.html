@@ -62,18 +62,18 @@
         <!-- Product Description -->
         <div class="product-description">
             <h2 class="description-title">Описание товара</h2>
-            {% if product.first_discription_photo %}
-            <img src="{{ product.first_discription_photo.url }}" class="product-discription-photo">
-            <img src="{{ product.second_discription_photo.url }}" class="product-discription-photo">
-            {% else %}
+            {% comment %} {% if product.decription_images %} {% endcomment %}
+                {% for decription_image in product.decription_images.all %}
+                <img src="{{ decription_image.decription_image.url }}" class="product-discription-photo">
+                {% endfor %}
+            {% comment %} {% else %} {% endcomment %}
             <div class="description-content">
-                <p>{{ product.discription }}</p>
+                <p>{{ product.discription|linebreaks }}</p>
                 <h2 class="description-title">Дополнительная информация</h2>
-                <p>{{ product.additional_information }}</p>
+                <p>{{ product.additional_information|linebreaks }}</p>
             </div> 
         </div>
-            {% endif %}
-        {% comment %}  {% endcomment %}
+            {% comment %} {% endif %} {% endcomment %}
         
 
     </main>

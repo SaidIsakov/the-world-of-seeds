@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="{% static "main/css/subcategories.css" %}">
     <link rel="stylesheet" href="{% static "main/css/product_list.css" %}">
     <link rel="stylesheet" href="{% static "news/css/news.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/about-us.css" %}">
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+
     <!-- JS -->
      <script src="{% static "main/js/navigation.js" %}"></script>
      <script src="{% static "main/js/product_detail.js" %}"></script>
@@ -24,6 +29,9 @@
 
 <!-- Top Header -->
     {% include "components/__header.html" %}
+
+    <!-- Search results container -->
+    
 
 <!-- Main Navigation -->
     {% include "components/__navigation.html" %}

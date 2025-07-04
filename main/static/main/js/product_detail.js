@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     
-    document.querySelector('.main-image-container').insertAdjacentHTML('beforeend', navHTML);
+    document.querySelector('.main-image-container').insertAdjacentHTML('beforeend',navHTML);
     
     // Обработчики для кнопок навигации
     document.querySelector('.prev').addEventListener('click', () => showImage(currentIndex - 1));

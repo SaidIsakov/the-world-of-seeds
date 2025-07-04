@@ -30,10 +30,10 @@
     flex-direction: column;
 }
 
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
 .news-image {
     width: 100%;
@@ -56,9 +56,6 @@
     text-decoration: none;
 }
 
-.news-title:hover {
-    color: #4a6cf7;
-}
 
 .news-excerpt {
     color: #666;

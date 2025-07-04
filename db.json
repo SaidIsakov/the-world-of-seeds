@@ -1,0 +1,1049 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2025-07-01T22:52:13.651Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "5 АП 5 UP Italpollina",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2025-07-01T22:52:20.659Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "DescriptionImage object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2025-07-01T22:52:45.244Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Gallery object (1)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2025-07-01T23:10:11.347Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "DescriptionImage object (1)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2025-07-01T23:10:22.160Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "2",
+            "object_repr": "DescriptionImage object (2)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2025-07-01T23:11:59.380Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "Семена томат розетт (tl 18304) f1",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2025-07-01T23:12:59.000Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Семена огурец лютояр f1 lyutoyar f1 yuksel tohum",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2025-07-01T23:16:14.650Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "4",
+            "object_repr": "Биоинсектицид Пециломицин РМ116",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2025-07-01T23:16:56.460Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Gallery object (2)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2025-07-01T23:17:10.347Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "Gallery object (3)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2025-07-01T23:17:19.392Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "4",
+            "object_repr": "Gallery object (4)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2025-07-01T23:17:29.160Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "Gallery object (5)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2025-07-01T23:18:57.740Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "5",
+            "object_repr": "БиоФунгицид Триходермин ТН82",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2025-07-01T23:19:15.506Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "Gallery object (6)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2025-07-01T23:20:29.766Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "ПАВЕРФОЛ (спидфол) АМИНО КАЛЬМАГ (антистрессант)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2025-07-01T23:20:37.683Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "ПАВЕРФОЛ (спидфол) АМИНО КАЛЬМАГ (антистрессант)",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is popular product\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2025-07-01T23:21:12.455Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "7",
+            "object_repr": "Gallery object (7)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2025-07-01T23:23:10.792Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "3",
+            "object_repr": "DescriptionImage object (3)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2025-07-01T23:23:29.638Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "4",
+            "object_repr": "DescriptionImage object (4)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2025-07-02T11:06:33.948Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Семена огурец лютояр f1 lyutoyar f1 yuksel tohum",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Discription\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2025-07-02T11:07:08.566Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Семена огурец лютояр f1 lyutoyar f1 yuksel tohum",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Additional information\"]}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add Category",
+            "content_type": 7,
+            "codename": "add_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change Category",
+            "content_type": 7,
+            "codename": "change_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete Category",
+            "content_type": 7,
+            "codename": "delete_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view Category",
+            "content_type": 7,
+            "codename": "view_category"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add Product",
+            "content_type": 8,
+            "codename": "add_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change Product",
+            "content_type": 8,
+            "codename": "change_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete Product",
+            "content_type": 8,
+            "codename": "delete_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view Product",
+            "content_type": 8,
+            "codename": "view_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add Image",
+            "content_type": 9,
+            "codename": "add_gallery"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change Image",
+            "content_type": 9,
+            "codename": "change_gallery"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete Image",
+            "content_type": 9,
+            "codename": "delete_gallery"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view Image",
+            "content_type": 9,
+            "codename": "view_gallery"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add description image",
+            "content_type": 10,
+            "codename": "add_descriptionimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change description image",
+            "content_type": 10,
+            "codename": "change_descriptionimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete description image",
+            "content_type": 10,
+            "codename": "delete_descriptionimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view description image",
+            "content_type": 10,
+            "codename": "view_descriptionimage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add subcategory",
+            "content_type": 11,
+            "codename": "add_subcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change subcategory",
+            "content_type": 11,
+            "codename": "change_subcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete subcategory",
+            "content_type": 11,
+            "codename": "delete_subcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view subcategory",
+            "content_type": 11,
+            "codename": "view_subcategory"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 45,
+        "fields": {
+            "name": "Can add New",
+            "content_type": 12,
+            "codename": "add_new"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 46,
+        "fields": {
+            "name": "Can change New",
+            "content_type": 12,
+            "codename": "change_new"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 47,
+        "fields": {
+            "name": "Can delete New",
+            "content_type": 12,
+            "codename": "delete_new"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 48,
+        "fields": {
+            "name": "Can view New",
+            "content_type": 12,
+            "codename": "view_new"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$dysnCxOLee611vsZfS5Xuv$rez9AEL+643eiJv3JtfMP6E7Ar+86vs6VulhmQffQPo=",
+            "last_login": "2025-07-01T22:43:43.598Z",
+            "is_superuser": true,
+            "username": "Said",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-07-01T22:43:09.674Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "q58v4e99hf916t2byoqf6ay44n8upp7s",
+        "fields": {
+            "session_data": ".eJxVjDsOwyAQBe9CHSHAC4tTpvcZ0OKF4CQCyZ8qyt0jJBdJ-2bmvUWgYy_h2NIaFhZXocXld4s0P1PtgB9U703Ore7rEmVX5Ek3OTVOr9vp_h0U2kqv55TBZSSkaEbNynvlEX0aHLqoCDgbZAZtnAaA5LNm7dDaYbQwKCM-X-O0NvA:1uWjhX:OdjL6Do_50YcQCTDkKbkQQCphw5e3gsFHwfHdCpBweY",
+            "expire_date": "2025-07-15T22:43:43.602Z"
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 1,
+        "fields": {
+            "title": "Семена",
+            "image": "categories/seeds-img.jpg",
+            "slug": "semena",
+            "is_popular_category": false
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 2,
+        "fields": {
+            "title": "Удобрения",
+            "image": "categories/fertilizers-img.jpg",
+            "slug": "udobreniya",
+            "is_popular_category": false
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 3,
+        "fields": {
+            "title": "Средства защиты растений",
+            "image": "categories/protect-for-agro.webp",
+            "slug": "sredstva-zashity-rastenij",
+            "is_popular_category": false
+        }
+    },
+    {
+        "model": "main.category",
+        "pk": 4,
+        "fields": {
+            "title": "Инструменты",
+            "image": "categories/instruments.jpg",
+            "slug": "instrumenty",
+            "is_popular_category": false
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 1,
+        "fields": {
+            "title": "Арбуз",
+            "image": "subcategories/melon.webp",
+            "is_popular_subcategory": true,
+            "slug": "arbuz",
+            "subcategory_category": 1
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 2,
+        "fields": {
+            "title": "Томаты",
+            "image": "subcategories/tomatos.webp",
+            "is_popular_subcategory": true,
+            "slug": "tomaty",
+            "subcategory_category": 1
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 3,
+        "fields": {
+            "title": "Огурец",
+            "image": "subcategories/cucumber.jpg",
+            "is_popular_subcategory": true,
+            "slug": "ogurec",
+            "subcategory_category": 1
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 4,
+        "fields": {
+            "title": "Средства от вредителей",
+            "image": "subcategories/The-pest.webp",
+            "is_popular_subcategory": true,
+            "slug": "sredstva-ot-vreditelej",
+            "subcategory_category": 3
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 5,
+        "fields": {
+            "title": "Средства от болезней",
+            "image": "subcategories/disease.JPG",
+            "is_popular_subcategory": false,
+            "slug": "sredstva-ot-boleznej",
+            "subcategory_category": 3
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 6,
+        "fields": {
+            "title": "Комплексные удобрения",
+            "image": "subcategories/комлексное.jpg",
+            "is_popular_subcategory": false,
+            "slug": "kompleksnye-udobreniya",
+            "subcategory_category": 2
+        }
+    },
+    {
+        "model": "main.subcategory",
+        "pk": 7,
+        "fields": {
+            "title": "Стимуляторы и антистрессанты",
+            "image": "subcategories/stimulator-antis.png",
+            "is_popular_subcategory": true,
+            "slug": "stimulyatory-i-antistressanty",
+            "subcategory_category": 2
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 1,
+        "fields": {
+            "title": "5 АП 5 UP Italpollina",
+            "manufacturer": "Italpollina (Италия)",
+            "quantity": "1 литр",
+            "price": 5000.0,
+            "discription": "",
+            "additional_information": "",
+            "availability": true,
+            "subcategory": 6,
+            "category": 2,
+            "slug": "5-ap-5-up-italpollina",
+            "is_popular_product": false,
+            "is_hero_product": false
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 2,
+        "fields": {
+            "title": "Семена томат розетт (tl 18304) f1",
+            "manufacturer": "Esasem (Италия)",
+            "quantity": "500 семян",
+            "price": 4800.0,
+            "discription": "Розетт — ТЛ (TL) 18304 F1 - высокорослый гибрид розового томата, срок созревания - 70 дней.\\r\\n\\r\\nОчень привлекательный и вкусный.\\r\\n\\r\\nПлоды имеют насыщенный темно-розовый цвет, однородную круглую форму и толстую мякоть.\\r\\n\\r\\nСредняя масса плода 250-300 г.\\r\\n\\r\\nОтличная устойчивость к растрескиванию, замечательная плотность плодов и длительный срок хранения.\\r\\n\\r\\nРастение сильное, со средним междоузлием, хорошо сбалансировано, подходит как для перезимовки, так и для весенне-летнего периода. Завязывается очень хорошо и гарантирует стабильный урожай.",
+            "additional_information": "Для употребления в свежем виде и для переработки. Для выращивания в условиях закрытого грунта, пленочных и стеклянных теплиц.\\r\\n\\r\\nОбладает высокой устойчивостью к (HR) к Verticillium (V), Fusarium (Fol 1,2), вирусу мозаики томатов (ToMV) и промежуточная устойчивость (IR) к вирусу желтого скручивания листьев томатов (TYLCV) и нематодам (MaMiMj).",
+            "availability": true,
+            "subcategory": 2,
+            "category": 1,
+            "slug": "semena-tomat-rozett-tl-18304-f1",
+            "is_popular_product": true,
+            "is_hero_product": true
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 3,
+        "fields": {
+            "title": "Семена огурец лютояр f1 lyutoyar f1 yuksel tohum",
+            "manufacturer": "Yuksel Tohum (Турция)",
+            "quantity": "500 семян",
+            "price": 2200.0,
+            "discription": "Лютояр F1 - ранний гибрид партенокарпического огурца корнишонного типа, период созревания 38-40 дней.  Гибрид с высокой ранней и общей урожайностью. Cтрессоустойчивый, с длительным периодом плодоношения. В узле формируется 2-3 завязи и более.Зеленцы красивые, цилиндрической формы, темно-зеленые, без пустот, плотные, тяжелые, длиной 12 см, весом 90-110 гр, ароматные. Плоды не становятся «бочкообразными», не теряют бугорчатость и цвет при длительном плодоношении в самые жаркие месяцы.",
+            "additional_information": "Отличная завязываемость плодов при нерегулируемых условиях. Побеги средней степени ветвления. Плоды транспортабельные, долго сохраняют товарный вид после сбора. Для выращивания в первом и втором обороте, отличные показатели при выращивании в открытом грунте, высокая степень регенерации. Отличные показатели при квашении и мариновании. Самый устойчивый гибрид к серой и белой гнилям - неоспоримое преимущество во втором обороте и в дождливое лето в открытом грунте.",
+            "availability": false,
+            "subcategory": 3,
+            "category": 1,
+            "slug": "semena-ogurec-lyutoyar-f1-lyutoyar-f1-yuksel-tohum",
+            "is_popular_product": true,
+            "is_hero_product": false
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 4,
+        "fields": {
+            "title": "Биоинсектицид Пециломицин РМ116",
+            "manufacturer": "Planteco (Россия)",
+            "quantity": "5 кг",
+            "price": 4800.0,
+            "discription": "Биоинсектицид Пециломицин РМ116 0,2 / метаризин (пакет 1 кг)  - это водорастворимый биопрепарат для борьбы с почвенными вредителями: \r\n\r\nмедведкой;\r\nпроволочником;\r\nличинками совок,\r\nличинками майского жука;\r\nзимующими формами колорадского жука.\r\nСпециальная формуляция препарата позволяет вносить его с помощью стандартных опрыскивателей и через системы капельного полива.\r\n\r\n\r\n\r\nСостав и механизм действия\r\nДействующей основой препарата является комплекс энтомопатогенных грибов: Paecilomyces fumosoroseus и Metarhizium anisopliаe subsp. atis с общим титром не менее 1х109 КОЕ/г.\r\n\r\nДействие препарата основывается на высокой энтомопатогенной активности грибов рода Metarhizium и Paecilomyces. Споры гриба, при контакте с телом вредителя, в течение 10-12 часов прорастают и поражают жировую ткань, кишечный тракт, парализуют нервную систему, мышечную ткань и органы дыхания. В результате вредитель погибает и становится источником развития для самого гриба и другой микрофлоры почвы.\r\n\r\nИспользование препарата Пециломицин 0,2 РМ116 в технологии выращивании сельскохозяйственных, плодово-ягодных и декоративных культур позволяет снизить поражаемость культуры почвенными вредителями: медведкой, проволочником и личинками майских жуков.\r\n\r\n\r\nИнструкция по применению\r\nПрепарат вносят в почву осенью или весной любым доступным способом: в растворе с поливной водой или опрыскиванием почвы. Рекомендуется использовать опрыскиватели с диаметром фильтров и форсунок не менее 0,2 мм.\r\n\r\nПри высадке рассады или саженцев, замачивают корневую систему в растворе препарата или вносят его с поливной водой\r\n\r\nВ сухой почве эффективность препарата существенно снижается!\r\n\r\n\r\nПриготовление рабочего раствора\r\nНорма расхода препарата 5-10 грамм 1л воды.",
+            "additional_information": "Для приготовления рабочего раствора бак опрыскивателя наполняют на 1/2 водой, затем при включенном смесителе добавляют препарат. После доливают необходимое количество воды при включенном смесителе.\r\nПри совместном использовании с удобрениями, стимуляторами и др. для приготовления рабочего раствора бак опрыскивателя наполняют на 1/2 водой вносят необходимые компоненты баковой смеси и тщательно перемешивают. После этого объем рабочего раствора доводят до 2/3 от необходимого объема, вносят препарат и тщательно перемешивают после доливают необходимое количество воды при включенном смесителе.\r\n\r\nПри приготовлении многокомпонентных баковых смесей рекомендуется проводить пробное смешивание для проверки стабильности рабочего раствора.\r\nПриготовленный рабочий раствор необходимо использовать в течение 3- х часов после приготовления.\r\nСовместимость препарата\r\nПециломицин РМ116 0,2 совместим с биопрепаратами, регуляторами роста, инсектицидами и удобрениями.",
+            "availability": false,
+            "subcategory": 4,
+            "category": 3,
+            "slug": "bioinsekticid-pecilomicin-rm116",
+            "is_popular_product": true,
+            "is_hero_product": false
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 5,
+        "fields": {
+            "title": "БиоФунгицид Триходермин ТН82",
+            "manufacturer": "Planteco (Россия)",
+            "quantity": "5 кг",
+            "price": 3186.0,
+            "discription": "Биофунгицид Триходермин TH82 (упаковка 1 кг) — биологический фунгицид, препарат в сухой форме для защиты растений от широкого спектра грибных и бактериальных болезней овощных, плодово-ягодных, сельскохозяйственных и декоративных культур.\r\n\r\nДействующей основой препарата является споры и мицелий грибов Trichoderma harzianum subsp. trigo штамма TH82 с титром не менее 2х1000 000 000 спор/г и продукты их метаболизма, биологически активные вещества.\r\n\r\nГрибы рода Trichoderma обладаю высокой метаболической активности, синтезируют и выделяют более 40 веществ с анитибиотической активностью (глиотоксин, виридин, триходермин и пр.), которые угнетают размножение и развитие фитопатогенгых грибов.\r\n\r\nЭффективен против:\r\n\r\n Alternaria (Альтернариоз);\r\nAscochyta (Аскохитоз);\r\nBotrytis (Серая гниль);\r\nVerticillium (Вертициллез, Вертициллезное увядание);\r\nColletotrichum(Антракноз) ;\r\nFusarium (Фузариоз, гниль корневаая);\r\nHelminthosporium (Гельминтоспориоз);\r\nPythium (Питиозная гниль);\r\nPhoma (Фомоз, гниль);\r\nPhytophthora (Фитофтороз);\r\nбактериальные заболевания.\r\nТакже за счет продукции комплекса органических кислот (салициловой, архидоновой кислот) и фитогормонов (ауксиновой, гиберелиновой и цитокининовой природы), продуцент препарата повышает устойчивость растений к вторичному заражению болезнями и улучшает стойкость к действию неблагоприятных факторов внешней среды (засуха, заморозки и пр.).\r\n\r\nДополнительно гриб Trichoderma harzianum, имеет уникальный механизм воздействия на фитопатогенные грибы – гиперпаразитизм. Благодаря синтезу комплекса литических ферментов (хитиназ, протеаз и пр.), он способен расщеплять клеточные стенки таких патогенов, как Sclerotinia sclerotiorum, Rhizoctonia solani, грибов рода Fusarium и Pythium и использовать их в дальнейшем в качестве источника питательных веществ\r\n\r\nПри применении препарата для обработки почвы гриб Trichoderma harzianum обеспечивает две функции: подавляет патогенные микроорганизмы, которые распространяются через почву и растительные остатки. Обеспечивает оздоровление почв (уменьшение инфекционного фона фитопатогенов, за счет продукции биологически активных веществ стимулирует развитие растений).\r\n\r\nТакже грибы рода Trichoderma способны к формированию полезной микоризы с корнями растений, что улучшает поглощение питательных элементов (азота, фосфора и калия) и обеспечивает дополнительную стимуляцию развития корневой системы.",
+            "additional_information": "Рекомендации к применению\r\n\r\nНорма расхода препарата 20-50 грамм на 10л воды.\r\n\r\nОпрыскивание проводить в утреннее или вечернее время при среднесуточной температуре воздуха от +10°С. Не использовать при интенсивном солнечном излучении.\r\n\r\nПеред добавлением препарата в рабочий раствор предварительно готовят маточный раствор. Необходимое количество препарата вносят в 5-20 литров воды. Полученный маточный раствор настаивают 30-40 мин периодически перемешивая. После фильтруют через сетчатый фильтр или два слоя марли. Отфильтрованный маточный раствор добавляют в рабочий раствор для применения.\r\n\r\nТемпература рабочего раствора должна быть не ниже +10°С.\r\n\r\nТриходермин TH82 совместим с химическими гербицидами, инсектицидами и биологическими препаратами и рост стимуляторами. Проявляет синергическое действие с препаратом Фитодок BS26.\r\n\r\n⚠ Триходермин TH82 не совместим с химическими фунгицидами!",
+            "availability": true,
+            "subcategory": 5,
+            "category": 3,
+            "slug": "biofungicid-trihodermin-tn82",
+            "is_popular_product": true,
+            "is_hero_product": true
+        }
+    },
+    {
+        "model": "main.product",
+        "pk": 6,
+        "fields": {
+            "title": "ПАВЕРФОЛ (спидфол) АМИНО КАЛЬМАГ (антистрессант)",
+            "manufacturer": "DRT Doctor Tarsa (Турция)",
+            "quantity": "5 литров",
+            "price": 5100.0,
+            "discription": "",
+            "additional_information": "",
+            "availability": false,
+            "subcategory": 7,
+            "category": 2,
+            "slug": "paverfol-spidfol-amino-kalmag-antistressant",
+            "is_popular_product": false,
+            "is_hero_product": false
+        }
+    },
+    {
+        "model": "main.gallery",
+        "pk": 1,
+        "fields": {
+            "image": "products/5_up_copia-400x400.jpg",
+            "products": 1
+        }
+    },
+    {
+        "model": "main.gallery",
+        "pk": 2,
+        "fields": {
+            "image": "products/TL_18304_2-400x400.jpeg",
+            "products": 2
+        }
+    },
+    {
+        "model": "main.gallery",
+        "pk": 3,
+        "fields": {
+            "image": "products/lutoarF1.webp",
+            "products": 3
+        }
+    },
+    {
+        "model": "main.gallery",
+        "pk": 4,
+        "fields": {
+            "image": "products/lutoarf1-2.jpg",
+            "products": 3
+        }
+    },
+    {
+        "model": "main.gallery",
+        "pk": 5,
+        "fields": {
+            "image": "products/Pecilomicin_Planteco.jpg",
+            "products": 4
+        }
+    },
+    {
+        "model": "main.gallery",
+        "pk": 6,
+        "fields": {
+            "image": "products/th82.webp",
+            "products": 5
+        }
+    },
+    {
+        "model": "main.gallery",
+        "pk": 7,
+        "fields": {
+            "image": "products/powerful.png",
+            "products": 6
+        }
+    },
+    {
+        "model": "main.descriptionimage",
+        "pk": 2,
+        "fields": {
+            "decription_image": "descriptoin_image/мир_5ап.jpg",
+            "products": 1
+        }
+    },
+    {
+        "model": "main.descriptionimage",
+        "pk": 3,
+        "fields": {
+            "decription_image": "descriptoin_image/power_discription.jpg",
+            "products": 6
+        }
+    },
+    {
+        "model": "main.descriptionimage",
+        "pk": 4,
+        "fields": {
+            "decription_image": "descriptoin_image/амино_внесение_общ2.jpg",
+            "products": 6
+        }
+    },
+    {
+        "model": "news.new",
+        "pk": 1,
+        "fields": {
+            "title": "Сезонные скидки на средства защиты растений",
+            "text": "С 1 апреля действуют сезонные скидки на весь ассортимент средств защиты растений. Подготовьтесь к дачному сезону заранее и сэкономьте до 25% на покупке необходимых препаратов...",
+            "image": "news/protect-for-agro.webp",
+            "created_at": "2025-06-30T09:02:46.836Z",
+            "update_at": "2025-06-30T09:02:46.836Z"
+        }
+    }
+]

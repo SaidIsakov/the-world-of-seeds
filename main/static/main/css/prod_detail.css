@@ -4,7 +4,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px 20px;
-            background: white;
+            /* background: white; */
         }
 
         .product-container {
@@ -295,7 +295,10 @@
         }
 
         .product-discription-photo{
-                width: 100%;
+                max-width: 950px;
+                text-align: center;
+                justify-content: center;
+
         }
 
         /* Responsive Design */
