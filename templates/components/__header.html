@@ -40,10 +40,17 @@
                         <span class="header-icon-symbol">❤️</span>
                         <span>ИЗБРАННОЕ</span>
                     </a>
-                    <a href="#" class="header-icon">
+                    {% if not request.user.is_authenticated  %}
+                    <a href="{% url "login" %}" class="header-icon">
                         <span class="header-icon-symbol">👤</span>
                         <span>МОЙ АККАУНТ</span>
                     </a>
+                    {% else %}
+                    <a href="{% url "profile" %}" class="header-icon">
+                        <span class="header-icon-symbol">👤</span>
+                        <span>МОЙ АККАУНТ</span>
+                    </a>
+                    {% endif %}
                     {% comment %} <a href="#" class="header-icon">
                         <span class="header-icon-symbol">🛒</span>
                         <span>КОРЗИНА</span>

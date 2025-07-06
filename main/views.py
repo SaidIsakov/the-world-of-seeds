@@ -2,79 +2,101 @@ from django.shortcuts import render
 from .models import Category, Product, Gallery, Subcategory
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from django.views import View
+from django.views.generic import TemplateView, DetailView, ListView
+from django.contrib.auth.views import LoginView
+
 
 
 # Create your views here.
-def index(request):
-    is_popular_products = Product.objects.filter(is_popular_product=True)
-    is_hero_products = Product.objects.filter(is_hero_product=True)
-    subcategories = Subcategory.objects.filter(is_popular_subcategory=True)
+class IndexView(TemplateView):
+    """ Главная страница """
+    template_name = 'main/index.html'
     
-    context = {
-        'is_popular_products':is_popular_products,
-        'is_hero_products': is_hero_products,
-        'title':'Главная',
-        'subcategories':subcategories
-    }
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'is_popular_products': Product.objects.filter(is_popular_product=True),
+            'is_hero_products': Product.objects.filter(is_hero_product=True),
+            'subcategories': Subcategory.objects.filter(is_popular_subcategory=True),
+            'title': 'Главная'
+        })
+        return context
     
-    return render(request, 'main/index.html', context)
-
-
-def product_detail(request, slug):
-    """ Переход на страницу с товаром """
-    product = get_object_or_404(Product, slug=slug)
-    context = {
-        'title':product.title,
-        'product':product,
-    }
-    return render(request, 'main/product_detail.html', context)
-
-def get_categories(request):
-    """ Возращает категории на отдельной странице """
-    categories = Category.objects.all()
+class ProductDetailView(DetailView):
+    """ Страница товара """
+    model = Product
+    template_name = 'main/product_detail.html'
+    slug_url_kwarg = 'slug'
+    context_object_name = 'product'
     
-    context = {
-        'title': 'Каталог',
-        'categories':categories
-    }
-    return render(request, 'main/categories.html', context)
-
-def get_subcategories(request,slug):
-    """ Возращает подкатегории по категории """
-    category = get_object_or_404(Category, slug=slug)
-    subcategories = category.subcategories.all()
-        
-    context = {
-        'title':category.title,
-        'subcategories':subcategories
-    }
-    return render(request, 'main/subcategories.html', context)
-
-def get_products_list(request, slug):
-    """ Выводит на отдельной странице продукты подкатегории """
-    subcategory = Subcategory.objects.get(slug=slug)
-    products = subcategory.products.all()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = self.object.title
+        return context
     
-    context = {
-        'title':subcategory.title,
-        'products':products
-    }
-    return render(request, 'main/product_list.html', context)
 
-def search_results(request):
-    """ Ищет товары по названию """
-    query = request.GET.get('q', '')
-    if query:
-        result = Product.objects.filter(title__icontains=query)[:5]
-    else:
-        result = []
-        
-    context = {
-        'result':result,
-        'query':query
-    }
-    return render(request, 'components/search_results.html', context)
+class CategoriesView(ListView):
+    " вывод всех категорий "
+    model = Category
+    template_name = 'main/categories.html'
+    context_object_name = 'categories'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Каталог'
+        return context
+    
 
-def about_us(request):
-    """ Выводит на страницу 'о нас' """
-    return render(request, 'main/about_us.html')
+class SubcategoryView(ListView):
+    """ Вывод подкатегорий по категории """
+    template_name = 'main/subcategories.html'
+    context_object_name = 'subcategories'
+    
+    def get_queryset(self):
+        category = get_object_or_404(Category, slug=self.kwargs['slug'])
+        return category.subcategories.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category = get_object_or_404(Category, slug=self.kwargs['slug'])
+        context['title'] = category.title
+        return context
+
+    
+
+class ProductListView(ListView):
+    """ Список товаров для конкретной категории """
+    template_name = 'main/product_list.html'
+    context_object_name = 'products'
+    
+    def get_queryset(self):
+        """ Возвращаем все товары этой подкатегории """
+        subcategory = get_object_or_404(Subcategory, slug = self.kwargs['slug'])
+        return subcategory.products.all()
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Получаем подкатегорию для заголовка
+        subcategory = get_object_or_404(Subcategory, slug=self.kwargs['slug'])
+        context['title'] = subcategory.title  # Заголовок = название подкатегории
+        return context
+
+class SearchResultsView(TemplateView):
+    """Результаты поиска"""
+    template_name = 'components/search_results.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        query = self.request.GET.get('q', '')
+        context['query'] = query
+        if query:
+            context['result'] = Product.objects.filter(title__icontains=query)[:5]
+        else:
+            return []
+        return context
+
+class About_us(TemplateView):
+    """ Страница 'О нас' """
+    template_name = 'main/about_us.html'
+    

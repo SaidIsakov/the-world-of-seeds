@@ -39,19 +39,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    'phonenumber_field',#для добавления номера телефона(библиотека)
+    #APP
     'main',
     'news',
+    'users',
 ]
 
+AUTH_USER_MODEL = 'users.CustomUser' # new
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
 ]
 
 ROOT_URLCONF = 'conf.urls'
@@ -83,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'seeds',
-        'USER': 'Said',
-        'PASSWORD': 1391,
+        'USER': 'postgres',
+        'PASSWORD': 'sad12sad34',
         'HOST':'localhost',
         'PORT':5432,
     }
@@ -132,6 +137,7 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
     BASE_DIR / 'main/static',
     BASE_DIR / 'news/static',
+    BASE_DIR / 'users/static',
 ]
 
 MEDIA_URL = '/media/'

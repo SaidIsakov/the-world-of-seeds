@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 class="auth-title">Создать аккаунт</h1>
+                <p class="auth-subtitle">Заполните форму для регистрации</p>
+            </div>
+
+            <form class="auth-form", method='post'>
+                <div class="name-fields">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {{ form.as_p }}   
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-button">Зарегистрироваться</button>
+
+                <div class="auth-divider">или зарегистрироваться через</div>
+
+                <div class="social-auth">
+                    <button type="button" class="social-button">
+                        <span class="social-icon">G</span>
+                        Продолжить с Google
+                    </button>
+                    <button type="button" class="social-button">
+                        <span class="social-icon">F</span>
+                        Продолжить с Facebook
+                    </button>
+                    <button type="button" class="social-button">
+                        <span class="social-icon">VK</span>
+                        Продолжить с ВКонтакте
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    Уже есть аккаунт? <a href="#" class="auth-link">Войти</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+{% endblock main %}
