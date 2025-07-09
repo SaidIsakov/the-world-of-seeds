@@ -1,0 +1,127 @@
+.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
+
+.header h1 {
+            /* font-size: 2rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 40px; */
+            font-size: 2.2rem;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+.contact-info {
+            display: flex;
+            padding: 40px 20px;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+            color: white;
+        }
+
+        .website-icon {
+            background: #4285f4;
+        }
+
+        .email-icon {
+            background: #4285f4;
+        }
+
+        .phone-icon {
+            background: #4285f4;
+        }
+
+        .contact-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .contact-details p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+
+        .contact-details a {
+            color: #4285f4;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .additional-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .additional-info p {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 3px;
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #4285f4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+            z-index: 1000;
+        }
+
+        .chat-widget:hover {
+            background: #3367d6;
+            transform: scale(1.05);
+            transition: all 0.2s ease;
+        }
+
+        .chat-icon {
+            color: white;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }

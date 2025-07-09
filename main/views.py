@@ -91,12 +91,17 @@ class SearchResultsView(TemplateView):
         query = self.request.GET.get('q', '')
         context['query'] = query
         if query:
-            context['result'] = Product.objects.filter(title__icontains=query)[:5]
+            context['result'] = Product.objects.filter(Q(title__icontains=query))[:5]
         else:
-            return []
+            context['result'] = []
         return context
 
 class About_us(TemplateView):
     """ Страница 'О нас' """
     template_name = 'main/about_us.html'
     
+class ContactsView(TemplateView):
+    template_name = 'main/contacts.html'
+    
+class BrandsView(TemplateView):
+    template_name = 'main/brands.html'

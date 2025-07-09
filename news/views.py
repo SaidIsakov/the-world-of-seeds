@@ -1,13 +1,18 @@
 from django.shortcuts import render
 from .models import New
+from django.views.generic import TemplateView, DetailView, ListView
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
-def News(request):
-    news = New.objects.all()
+
+
+class NewsView(ListView):
+    model = New
+    template_name = 'news/news.html'
+    context_object_name = 'news'
     
-    context = {
-        'title':'Новости',
-        'news': news
-    }
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = 'Новости'
+        return context
     
-    return render(request, 'main/news.html', context)

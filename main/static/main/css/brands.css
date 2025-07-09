@@ -1,0 +1,92 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.manufacturers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.manufacturer-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.manufacturer-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.manufacturer-logo {
+    max-width: 100%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .manufacturers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .manufacturer-card {
+        padding: 30px;
+        min-height: 150px;
+    }
+
+    .manufacturer-logo {
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .manufacturers-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .manufacturer-card {
+        padding: 25px;
+    }
+}
+
+/* Placeholder styling for empty cards */
+.placeholder-text {
+    color: #6c757d;
+    font-size: 1.1rem;
+    text-align: center;
+    font-style: italic;
+}

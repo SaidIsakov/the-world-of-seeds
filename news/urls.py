@@ -3,5 +3,5 @@ from .views import*
 
 
 urlpatterns = [
-    path('news/', News, name='news' ),
+    path('news/', NewsView.as_view(), name='news' ),
 ]

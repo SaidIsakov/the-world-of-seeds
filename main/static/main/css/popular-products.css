@@ -3,14 +3,14 @@
         }
 
         .section-header {
-            
+
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
-            
+
         }
 
-        .section-title-products {
+        .section-title-popular-products {
             font-size: 2.2rem;
             color: #333;
             text-align: center;
@@ -65,7 +65,7 @@
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
             max-width: 290px;
@@ -75,7 +75,7 @@
 
         .grid-product-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .discount-badge {
@@ -93,16 +93,24 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .rating {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.9);
             padding: 5px 8px;
             border-radius: 12px;
             font-size: 12px;
@@ -141,7 +149,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transform: rotate(45deg);
             transition: all 0.5s ease;
             opacity: 0;
@@ -152,9 +160,19 @@
         }
 
         @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+                opacity: 0;
+            }
         }
 
         .grid-product-info {
@@ -167,14 +185,14 @@
             margin-bottom: 5px;
         }
 
-        .grid-product-name a{
+        .grid-product-name a {
             font-weight: bold;
             margin-bottom: 5px;
             color: #333;
             text-decoration: none;
         }
 
-        
+
 
         .grid-product-price {
             color: #4a6cf7;
@@ -189,7 +207,7 @@
             align-items: center;
             margin-top: 10px;
 
-            
+
         }
 
         .action-btn {

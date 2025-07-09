@@ -4,4 +4,4 @@ from .models import New
 
 @admin.register(New)
 class NewAdminClass(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {'slug':('title',)}

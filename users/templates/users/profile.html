@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="profile-wrapper">
+    <div class="profile-main">
+        <div class="profile-header">
+            <h1>Профиль пользователя</h1>
+            <a href="{% url 'logout' %}" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Выйти
+            </a>
+        </div>
+
+        <div class="profile-info">
+            <div class="info-group">
+                <label>Имя:</label>
+                <div class="info-value">{{ user.first_name }}</div>
+            </div>
+
+            <div class="info-group">
+                <label>Фамилия:</label>
+                <div class="info-value">{{ user.last_name }}</div>
+            </div>
+
+            <div class="info-group">
+                <label>Email:</label>
+                <div class="info-value">{{ user.email }}</div>
+            </div>
+
+            <div class="info-group">
+                <label>Телефон:</label>
+                <div class="info-value">{{ user.phon_num }}</div>
+            </div>
+        </div>
+
+        {% comment %} <div class="profile-section">
+            <h3>Предпочтения</h3>
+            <div class="preferences">
+                <div class="preference-item">
+                    <span>Уведомления по email</span>
+                    <div class="preference-value">Активны</div>
+                </div>
+                <div class="preference-item">
+                    <span>Получать новости</span>
+                    <div class="preference-value">Неактивно</div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+    </div>
+</div>
+{% endblock main %}

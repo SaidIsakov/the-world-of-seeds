@@ -8,6 +8,7 @@ class New(models.Model):
     image = models.ImageField(upload_to='news/')
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
+    slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.title
@@ -16,5 +17,7 @@ class New(models.Model):
         verbose_name = 'New'
         verbose_name_plural = 'News'
     
+    # def get_absolute_url(self):
+    #     return reverse("news_detail", kwargs={"slug": self.slug})
     
     

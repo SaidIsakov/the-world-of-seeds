@@ -2,12 +2,12 @@
         <nav class="main-nav">
             {% comment %} <a href="#" class="nav-item catalog">≡ КАТАЛОГ ТОВАРОВ</a> {% endcomment %}
             <a href="{% url "get_categories" %}" class="nav-item">≡ КАТАЛОГ ТОВАРОВ</a>
-            <a href="#" class="nav-item">ПРОИЗВОДИТЕЛИ</a>
+            <a href="{% url "brands" %}" class="nav-item">ПРОИЗВОДИТЕЛИ</a>
             {% comment %} <a href="#" class="nav-item">АКЦИИ</a> {% endcomment %}
             {% comment %} <a href="#" class="nav-item">ОПЛАТА</a> {% endcomment %}
             {% comment %} <a href="#" class="nav-item">ДОСТАВКА</a> {% endcomment %}
             <a href="{% url "news" %}" class="nav-item">НОВОСТИ</a>
-            <a href="#" class="nav-item">КОНТАКТЫ</a>
+            <a href="{% url "contacts" %}" class="nav-item">КОНТАКТЫ</a>
             <a href="{% url "about_us" %}" class="nav-item">О НАС</a>
         </nav>
 </header>
