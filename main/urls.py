@@ -10,5 +10,7 @@ urlpatterns = [
     path('about-us/', About_us.as_view(), name='about_us'),
     path('search/', SearchResultsView.as_view(), name='search_results'),
     path('contacts/', ContactsView.as_view(), name='contacts'),
-    path('brands/', BrandsView.as_view(), name='brands')
+    path('brands/', BrandsView.as_view(), name='brands'),
+    path('agreement/', AgreementView.as_view(), name='agreement'),
+    
 ]

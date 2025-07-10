@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static "main/css/about-us.css" %}">
     <link rel="stylesheet" href="{% static "main/css/contacts.css" %}">
     <link rel="stylesheet" href="{% static "main/css/brands.css" %}">
+    <link rel="stylesheet" href="{% static "main/css/agreement.css" %}">
     <!-- NEWS -->
     <link rel="stylesheet" href="{% static "news/css/news.css" %}">
 
@@ -25,7 +26,8 @@
     <link rel="stylesheet" href="{% static "users/css/login.css" %}">
     <link rel="stylesheet" href="{% static "users/css/registration.css" %}">
     <link rel="stylesheet" href="{% static "users/css/user.css" %}">
-    
+    <link rel="stylesheet" href="{% static "users/css/messages.css" %}">
+
     <!-- HTMX -->
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
 
@@ -45,9 +47,10 @@
 <!-- Main Navigation -->
     {% include "components/__navigation.html" %}
 
-    <main>
+    {% include "users/components/messages.html" %}
+    <main class="container">
         {% block main %}
-
+            
         {% endblock main %}
     </main>
 

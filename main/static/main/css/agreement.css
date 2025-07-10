@@ -1,0 +1,38 @@
+.main-content {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .page-title {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .agreement-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #4CAF50;
+            margin: 20px 0 10px;
+            font-size: 20px;
+        }
+
+        .agreement-text {
+            margin-bottom: 10px;
+        }
+
+        .agreement-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .agreement-list li {
+            margin-bottom: 5px;
+        }

@@ -100,8 +100,16 @@ class About_us(TemplateView):
     """ Страница 'О нас' """
     template_name = 'main/about_us.html'
     
+    
+    
 class ContactsView(TemplateView):
+    """ страница контактов """
     template_name = 'main/contacts.html'
     
 class BrandsView(TemplateView):
+    """ Страница брэндов  """
     template_name = 'main/brands.html'
+    
+class AgreementView(TemplateView):
+    """ Страница пользовательского соглашения """
+    template_name = 'main/agreement.html'

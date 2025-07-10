@@ -2,7 +2,7 @@
 
 {% block main %}
 <div class="container">
-    <h1 class="section-title-categories">{{ category.title }}</h1>
+    <h1 class="section-title-categories">{{ title }}</h1>
     <div class="categories-grid">
         {% for subcategory in subcategories %}
         <a href="{{ subcategory.get_absolute_url }}" class="category-item" title="{{ subcategory.name }}">

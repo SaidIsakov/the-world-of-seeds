@@ -16,6 +16,7 @@ def register_user(request):
             user.set_password(form.cleaned_data['password'])
             user = form.save()  
             login(request,user)  
+            # messages.success(request, 'Вы успешно зарегистрировались')
             return redirect('profile')  
     else:
         form = RegistrUser()
@@ -30,6 +31,8 @@ def login_user(request):
             login(request, user)
             messages.success(request, 'Вы успешно вошли в аккаунт')
             return redirect('profile')
+        else:
+            return messages.error(request, 'Неверное имя пользователя или пароль')
     else:
         form = LoginUserForm()
     

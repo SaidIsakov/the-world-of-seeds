@@ -23,7 +23,7 @@
             <ul class="company-links">
                 <li><a href="{% url "about_us" %}" onclick="handleLinkClick('О нас')">О нас</a></li>
                 <li><a href="#" onclick="handleLinkClick('Политика конфиденциальности')">Политика конфиденциальности</a></li>
-                <li><a href="#" onclick="handleLinkClick('Пользовательское соглашение')">Пользовательское соглашение</a></li>
+                <li><a href="{% url "agreement" %}" onclick="handleLinkClick('Пользовательское соглашение')">Пользовательское соглашение</a></li>
                 <li><a href="{% url "brands" %}" onclick="handleLinkClick('Производители')">Производители</a></li>
                 {% comment %} <li><a href="#" onclick="handleLinkClick('Доставка')">Доставка</a></li> {% endcomment %}
                 <li><a href="{% url "contacts" %}" onclick="handleLinkClick('Контакты')">Контакты</a></li>
