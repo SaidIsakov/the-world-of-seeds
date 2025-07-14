@@ -1,13 +1,15 @@
 {% load static %}
+{% load cart_tags %}
+{% get_cart_quantity request as carts %}
+
     <header class="top-header">
         <div class="top-header-content">
             <div class="logo">
                 <div class="logo-icon">
                     <a href="{% url "index" %}">
-                        <img class="logo-img" src="{% static "main/img/Logo-icon.png" %}">    
+                        <img class="logo-img" src="{% static "main/img/logo.png" %}">    
                     </a>
                 </div>
-                {% comment %} <a href="{% url "index" %}">Мир семян </a> {% endcomment %}
             </div>
             
             <div class="search-section">
@@ -21,10 +23,11 @@
                 hx-swap="innerHTML"
                 name="q">
                 <p class="search-btn">🔍</p>
+                <div id="search-results" class="search-results-container">
+                    {% include "components/search_results.html" %}
+                </div>
             </div>
-        <div id="search-results" class="search-results-container">
-        {% include "components/search_results.html" %}
-        </div>
+        
             <div class="header-info">
                 <div>
                     <div class="phone-number">+7 (918) 311 90 25</div>
@@ -45,16 +48,23 @@
                         <span class="header-icon-symbol">👤</span>
                         <span>МОЙ АККАУНТ</span>
                     </a>
+                    <a href="{% url "login" %}" class="header-icon">
+                        <div class="header-icon-symbol">🛒</div>
+                        <span>Корзина</span>
+                    </a>
                     {% else %}
                     <a href="{% url "profile" %}" class="header-icon">
                         <span class="header-icon-symbol">👤</span>
                         <span>МОЙ АККАУНТ</span>
                     </a>
+                    <a href="{% url 'cart' %}" class="header-icon">
+                        <div class="header-icon-symbol">🛒</div>
+                        <span>Корзина</span>
+                        {% for cart in carts %}
+                        <span class="cart-badge">{{ cart.quantity }}</span>
+                        {% endfor %}
+                    </a>
                     {% endif %}
-                    {% comment %} <a href="#" class="header-icon">
-                        <span class="header-icon-symbol">🛒</span>
-                        <span>КОРЗИНА</span>
-                    </a> {% endcomment %}
                 </div>
             </div>
         </div>

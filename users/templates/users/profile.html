@@ -1,50 +1,44 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div class="profile-wrapper">
-    <div class="profile-main">
-        <div class="profile-header">
-            <h1>Профиль пользователя</h1>
-            <a href="{% url 'logout' %}" class="logout-btn">
+<div class="profile-card">
+            <div class="profile-header">
+                <i class="fas fa-user"></i>
+                <span>Профиль пользователя</span>
+                <a href="{% url 'logout' %}" class="logout-btn">
                 <i class="fas fa-sign-out-alt"></i> Выйти
             </a>
-        </div>
-
-        <div class="profile-info">
-            <div class="info-group">
-                <label>Имя:</label>
-                <div class="info-value">{{ user.first_name }}</div>
+            </div>
+            
+            <div class="profile-avatar">{{ user.first_name }}</div>
+            
+            <div class="profile-field">
+                <div class="profile-label">Имя</div>
+                <div class="profile-value">{{ user.first_name }}</div>
             </div>
 
-            <div class="info-group">
-                <label>Фамилия:</label>
-                <div class="info-value">{{ user.last_name }}</div>
+            <div class="profile-field">
+                <div class="profile-label">Фамилия</div>
+                <div class="profile-value">{{ user.last_name }}</div>
             </div>
-
-            <div class="info-group">
-                <label>Email:</label>
-                <div class="info-value">{{ user.email }}</div>
-            </div>
-
-            <div class="info-group">
-                <label>Телефон:</label>
-                <div class="info-value">{{ user.phon_num }}</div>
-            </div>
-        </div>
-
-        {% comment %} <div class="profile-section">
-            <h3>Предпочтения</h3>
-            <div class="preferences">
-                <div class="preference-item">
-                    <span>Уведомления по email</span>
-                    <div class="preference-value">Активны</div>
-                </div>
-                <div class="preference-item">
-                    <span>Получать новости</span>
-                    <div class="preference-value">Неактивно</div>
+            
+            <div class="profile-field">
+                <div class="profile-label">Телефон</div>
+                <div class="profile-value">
+                    <i class="fas fa-phone"></i>
+                    {{ user.phon_num }}
                 </div>
             </div>
-        </div> {% endcomment %}
-    </div>
-</div>
+            
+            <div class="profile-field">
+                <div class="profile-label">Email</div>
+                <div class="profile-value">
+                    <i class="fas fa-envelope"></i>
+                    {{ user.email }}
+                </div>
+            </div>
+            
+            {% comment %} <button class="edit-profile-btn">Редактировать профиль</button> {% endcomment %}
+            
+        </div>
 {% endblock main %}

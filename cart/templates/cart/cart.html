@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+    {% if carts %}
+    <main>
+    <div class="cart-card">
+            <div class="cart-header">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Корзина {{ carts.total_quantity }}</span>
+            </div>
+            {% for cart in carts %}
+            <!-- Cart Item 1 -->
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="{{ cart.product.get_first_photo }}">
+                </div>
+                <div class="cart-item-info">
+                    <div class="cart-item-name">{{ cart.product.title }}</div>
+                    <div class="cart-item-price">{{ cart.product.price }}</div>
+                </div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" 
+                    type="button" data-cart-id="{cart.id}">
+                        -
+                    </button>
+                    <span class="quantity-display">{{ cart.quantity }}</span>
+                    
+                    <button class="quantity-btn"
+                    type="button" data-cart-id="{cart.id}" data-cart-change-url="">
+                        +
+                    </button>
+                </div>
+                <div class="cart-item-total">ИТОГО {{ cart.sum }}</div>
+                <a href="{% url "cart_remove" cart.id %}">
+                <button class="remove-btn">
+                    <i class="fas fa-trash"></i>
+                </button>
+                </a>
+            </div>
+            {% endfor %}
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span class="total-label">Итого:</span>
+                    <span class="total-price">{{ carts.total_sum }} ₽</span>
+                </div>
+                <div class="cart-actions">
+                    <a href="{% url "index" %}">
+                    <button class="cart-btn continue-shopping">Продолжить покупки</button>
+                    </a>
+                    <a href="#">
+                    <button class="cart-btn checkout-btn">Оформить заказ</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% else %}
+    <div class="cart-card">
+        <div class="cart-header">
+            <i class="fas fa-shopping-cart"></i>
+            <h1>Корзина пуста</h1>
+        </div>
+    </div>
+    {% endif %}
+{% endblock main %}

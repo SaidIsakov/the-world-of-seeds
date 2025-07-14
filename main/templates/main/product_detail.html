@@ -48,25 +48,20 @@
                  <div class="price-section">
                     <span class="current-price">{{ product.price }} ₽</span>
                 </div> 
-                
-                <div class="purchase-section">
-                    <div class="quantity-section">
-                        {% comment %} <button class="buy-button" onclick="addToCart()">
+                <a href="{% url "cart_add" product.id %}">
+                <button class="buy-button" id="buy-button">
                             🛒 КУПИТЬ
-                        </button> {% endcomment %}
-                    </div>
-                </div>
+                </button>
+                </a>
             </div>
         </div>
 
         <!-- Product Description -->
         <div class="product-description">
             <h2 class="description-title">Описание товара</h2>
-            {% comment %} {% if product.decription_images %} {% endcomment %}
                 {% for decription_image in product.decription_images.all %}
                 <img src="{{ decription_image.decription_image.url }}" class="product-discription-photo">
                 {% endfor %}
-            {% comment %} {% else %} {% endcomment %}
             <div class="description-content">
                 <p>{{ product.discription|linebreaks }}</p>
                 <h2 class="description-title">Дополнительная информация</h2>
@@ -77,4 +72,5 @@
         
 
     </main>
+
 {% endblock main %}

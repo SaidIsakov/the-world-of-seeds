@@ -14,6 +14,7 @@ class New(models.Model):
         return self.title
     
     class Meta:
+        # db_table = 'news'
         verbose_name = 'New'
         verbose_name_plural = 'News'
     

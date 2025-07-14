@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'main',
     'news',
     'users',
+    'cart',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
@@ -142,6 +143,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'main/static',
     BASE_DIR / 'news/static',
     BASE_DIR / 'users/static',
+    BASE_DIR / 'cart/static'
 ]
 
 MEDIA_URL = '/media/'

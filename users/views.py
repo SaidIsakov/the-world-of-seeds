@@ -47,7 +47,8 @@ def login_user(request):
 def profile(request):
     # Просто передаем request.user в контекст шаблона
     return render(request, 'users/profile.html', {
-        'user': request.user
+        'title': 'Профиль',
+        'user': request.user,
     })
 # def profile(request):
 #     return render(request, 'users/profile.html')

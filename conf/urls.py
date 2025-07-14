@@ -9,7 +9,7 @@ urlpatterns = [
     path('',include('main.urls')),
     path('',include('news.urls')),
     path('',include('users.urls')),
-    
+    path('', include('cart.urls')),
 ]
 
 if settings.DEBUG:

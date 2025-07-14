@@ -67,8 +67,8 @@ body {
 
 
 .logo-img {
-    height: 100%;
-    width: 90px;
+    height: 30px;
+    width: 150px;
 }
 
 .search-section {
@@ -254,13 +254,13 @@ body {
 /* Стили для поиска */
 #search-results.search-results-container {
     position: absolute;
-    top: 10.3%;
-    left: 450px;
+    top: 100%;
+    left: 0;
     right: 0;
     max-width: 400px;
     /* Ширина 100% от родителя */
     background: white;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-top: none;
     border-radius: 0 0 15px 15px;
     box-shadow: 0 4px 15px rgba(113, 56, 56, 0.1);
@@ -337,3 +337,24 @@ body {
     color: #4CAF50;
 }
 
+/* Стили для бэйджа корзины */
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.header-icon {
+    position: relative; /* позиционирование бэйджа */
+}

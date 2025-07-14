@@ -1,10 +1,8 @@
 from django.shortcuts import render
-from .models import Category, Product, Gallery, Subcategory
+from .models import Category, Product, Subcategory
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
-from django.views import View
 from django.views.generic import TemplateView, DetailView, ListView
-from django.contrib.auth.views import LoginView
 
 
 
@@ -100,16 +98,40 @@ class About_us(TemplateView):
     """ Страница 'О нас' """
     template_name = 'main/about_us.html'
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = 'О нас'
+        return context
+    
+    
     
     
 class ContactsView(TemplateView):
     """ страница контактов """
     template_name = 'main/contacts.html'
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = 'Контакты'
+        return context
+    
+    
 class BrandsView(TemplateView):
     """ Страница брэндов  """
     template_name = 'main/brands.html'
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = 'Производители'
+        return context
+    
+    
 class AgreementView(TemplateView):
     """ Страница пользовательского соглашения """
     template_name = 'main/agreement.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = 'Пользовательского соглашение'
+        return context
+    

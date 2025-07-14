@@ -12,5 +12,4 @@ urlpatterns = [
     path('contacts/', ContactsView.as_view(), name='contacts'),
     path('brands/', BrandsView.as_view(), name='brands'),
     path('agreement/', AgreementView.as_view(), name='agreement'),
-    
 ]
