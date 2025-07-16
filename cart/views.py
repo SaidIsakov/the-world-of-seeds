@@ -4,6 +4,7 @@ from .models import Cart
 from main.models import Product
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 class CartView(TemplateView):
@@ -27,10 +28,12 @@ def cart_add(request, products_id):
     
     if not cart.exists():
         Cart.objects.create(user=request.user, product=product, quantity=1)
+        messages.success(request, 'Товар добавлен в коорзину')
     else:
         cart = cart.first()
         cart.quantity += 1
         cart.save()
+        messages.success(request, 'Товар добавлен в коорзину')
     return redirect(request.META['HTTP_REFERER'])
 
 

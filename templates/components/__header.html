@@ -60,9 +60,9 @@
                     <a href="{% url 'cart' %}" class="header-icon">
                         <div class="header-icon-symbol">🛒</div>
                         <span>Корзина</span>
-                        {% for cart in carts %}
-                        <span class="cart-badge">{{ cart.quantity }}</span>
-                        {% endfor %}
+                        
+                        <span class="cart-badge">{{ carts.total_quantity }}</span>
+                        
                     </a>
                     {% endif %}
                 </div>
