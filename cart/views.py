@@ -41,3 +41,15 @@ def cart_remove(request, cart_id):
     cart = get_object_or_404(Cart, id=cart_id)
     cart.delete()
     return redirect(request.META["HTTP_REFERER"])
+
+def cart_change_quantity(request, cart_id, action):
+    cart = get_object_or_404(Cart, id=cart_id)
+    
+    if action == 'increase':
+        cart.quantity += 1
+        
+    elif action == 'decrease' and cart.quantity > 1:
+        cart.quantity -= 1
+    
+    cart.save()
+    return redirect(request.META['HTTP_REFERER'])

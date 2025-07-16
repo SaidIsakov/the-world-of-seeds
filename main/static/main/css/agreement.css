@@ -1,38 +1,47 @@
-.main-content {
+.agreement-container {
     max-width: 1200px;
     margin: 0 auto 30px;
-    padding: 20px;
+    padding: 2rem;
     background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
 }
 
-.page-title {
-    color: #4CAF50;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+.agreement-title {
+    color: #2e7d32;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid #e0e0e0;
+    font-size: 2rem;
+}
+
+.agreement-update-date {
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
 }
 
 .agreement-section {
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
 }
 
-.section-title {
-    color: #4CAF50;
-    margin: 20px 0 10px;
-    font-size: 20px;
+.agreement-section h2 {
+    color: #2e7d32;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.4rem;
 }
 
-.agreement-text {
-    margin-bottom: 10px;
+.agreement-section p {
+    margin-bottom: 1rem;
 }
 
 .agreement-list {
-    margin-left: 20px;
-    margin-bottom: 15px;
+    margin: 1rem 0 1rem 2rem;
+    padding-left: 0;
 }
 
 .agreement-list li {
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
+    list-style-type: disc;
 }

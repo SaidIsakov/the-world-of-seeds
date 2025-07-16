@@ -20,19 +20,23 @@
                     <div class="cart-item-price">{{ cart.product.price }}</div>
                 </div>
                 <div class="quantity-controls">
-                    <a href="#">
+
+                    <a href="{% url "change_quantity" cart.id 'decrease' %} ">
                     <button class="quantity-btn" 
-                    type="button" data-cart-id="{cart.id}">
+                    type="button">
                         -
                     </button>
                     </a>
+
                     <span class="quantity-display">{{ cart.quantity }}</span>
-                    <a href="#">
+                    
+                    <a href="{% url "change_quantity" cart.id 'increase' %}">
                     <button class="quantity-btn"
                     type="button">
                         +
                     </button>
                 </a>
+                
                 </div>
                 <div class="cart-item-total">ИТОГО {{ cart.sum }}</div>
                 <a href="{% url "cart_remove" cart.id %}">
