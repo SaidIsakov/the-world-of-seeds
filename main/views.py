@@ -3,7 +3,7 @@ from .models import Category, Product, Subcategory
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.views.generic import TemplateView, DetailView, ListView
-
+from cart.forms import CartAddProductForm
 
 
 # Create your views here.
@@ -31,6 +31,7 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = self.object.title
+        context['cart_product_form'] = CartAddProductForm()
         return context
     
 

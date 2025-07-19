@@ -340,6 +340,7 @@
         order: 2;
     }
 
+
     .main-image-container {
         order: 1;
     }
@@ -388,4 +389,28 @@
     .current-price {
         font-size: 24px;
     }
+}
+
+/* Стили для кнопки добавления в корзину */
+.product-info input[type="submit"] {
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    margin-top: 15px;
+}
+
+.product-info input[type="submit"]:hover {
+    background: #3a5bd6;
+}
+
+.product-info input[type="submit"]:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
 }

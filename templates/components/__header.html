@@ -1,6 +1,6 @@
 {% load static %}
-{% load cart_tags %}
-{% get_cart_quantity request as carts %}
+{% comment %} {% load cart_tags %}
+{% get_cart_quantity request as carts %} {% endcomment %}
 
     <header class="top-header">
         <div class="top-header-content">
@@ -57,11 +57,14 @@
                         <span class="header-icon-symbol">👤</span>
                         <span>МОЙ АККАУНТ</span>
                     </a>
-                    <a href="{% url 'cart' %}" class="header-icon">
+                    <a href="{% url "cart_detail" %}" class="header-icon">
                         <div class="header-icon-symbol">🛒</div>
                         <span>Корзина</span>
-                        
-                        <span class="cart-badge">{{ carts.total_quantity }}</span>
+                        {% with total_items=cart|length %}
+                        {% if total_items > 0 %}
+                        <span class="cart-badge">{{ total_items }}</span>
+                        {% endif %}
+                        {% endwith %}
                         
                     </a>
                     {% endif %}

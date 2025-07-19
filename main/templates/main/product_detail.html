@@ -49,12 +49,13 @@
                     <span class="current-price">{{ product.price }} ₽</span>
                 </div> 
                 {% if product.availability %}
-                <a href="{% url "cart_add" product.id %}">
                     
-                <button class="buy-button" id="buy-button">
-                            🛒 КУПИТЬ
-                </button>
-                </a>
+                <form action="{% url "cart_add" product.id %}" method='post'>
+                {{ cart_product_form }}
+                {% csrf_token %}
+                <input type="submit" value="В корзину 🛒">
+                </form>
+
                 {% else %}
                 <h1 style="color: #4CAF50;">К Сожилению товара нет в наличии😞</h1>
                 {% endif %}
