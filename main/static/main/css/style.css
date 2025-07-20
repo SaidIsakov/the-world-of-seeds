@@ -145,6 +145,11 @@ body {
     background: #4CAF50;
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+     position: sticky;
+    top: 0; /* Расстояние от верхнего края, при котором header "прилипнет" */
+    z-index: 100; /* Чтобы header был поверх других элементов */
+    padding: 10px;
 }
 
 .main-nav {

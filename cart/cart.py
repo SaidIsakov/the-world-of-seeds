@@ -75,4 +75,4 @@ class Cart:
     def clear(self):
         # удалить корзину из сеанса
         del self.session[settings.CART_SESSION_ID]
-        self.save()    
+        self.save()

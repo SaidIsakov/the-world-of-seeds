@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin
-from django.core.validators import RegexValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
 class CustomUserManager(BaseUserManager):
@@ -16,10 +15,12 @@ class CustomUserManager(BaseUserManager):
     def create_superuser(self, email, password, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
+        
         if extra_fields.get('is_staff') is not True:
             raise ValueError('Superuser должен иметь is_staff=True.')
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser должен иметь is_superuser=True.')
+        
         return self.create_user(email, password, **extra_fields)
         
         
