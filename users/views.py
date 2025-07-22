@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .forms import RegistrUser,LoginUserForm, UserProfileForm
+from .forms import RegistrUser,LoginUserForm, CustomUserUpdateForm
 from django.contrib.auth import login, logout
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -37,25 +37,34 @@ def login_user(request):
         form = LoginUserForm()
     
     context = {
-        'title':'Авторизация',
-        'form':form
+        'title': 'Авторизация',
+        'form': form
     }
     return render(request, 'users/login.html', context)
 
 
 @login_required
 def profile(request):
+    if request.method == 'POST':
+        form = CustomUserUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Данные успешно обновлены')
+            return redirect('profile')
     # Просто передаем request.user в контекст шаблона
+    else:
+        form = CustomUserUpdateForm(instance=request.user) # GET-запрос - создаём форму с данными пользователя
+        
     return render(request, 'users/profile.html', {
         'title': 'Профиль',
         'user': request.user,
+        'form':form,
     })
-# def profile(request):
-#     return render(request, 'users/profile.html')
+
+
 
 
 def logout_user(request):
     """ Выход с аккаунта """
     logout(request)
     return redirect('index')
-

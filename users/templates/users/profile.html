@@ -1,44 +1,70 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div class="profile-card">
-            <div class="profile-header">
-                <i class="fas fa-user"></i>
-                <span>Профиль пользователя</span>
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <i class="fas fa-user"></i>
+            <span>Профиль пользователя</span>
+            <div class="header-actions">
                 <a href="{% url 'logout' %}" class="logout-btn">
-                <i class="fas fa-sign-out-alt"></i> Выйти
-            </a>
+                    <i class="fas fa-sign-out-alt"></i> Выйти
+                </a>
             </div>
-            
-            <div class="profile-avatar">{{ user.first_name }}</div>
-            
-            <div class="profile-field">
-                <div class="profile-label">Имя</div>
-                <div class="profile-value">{{ user.first_name }}</div>
-            </div>
-
-            <div class="profile-field">
-                <div class="profile-label">Фамилия</div>
-                <div class="profile-value">{{ user.last_name }}</div>
-            </div>
-            
-            <div class="profile-field">
-                <div class="profile-label">Телефон</div>
-                <div class="profile-value">
-                    <i class="fas fa-phone"></i>
-                    {{ user.phon_num }}
-                </div>
-            </div>
-            
-            <div class="profile-field">
-                <div class="profile-label">Email</div>
-                <div class="profile-value">
-                    <i class="fas fa-envelope"></i>
-                    {{ user.email }}
-                </div>
-            </div>
-            
-            {% comment %} <button class="edit-profile-btn">Редактировать профиль</button> {% endcomment %}
-            
         </div>
-{% endblock main %}
+        
+        <div class="profile-avatar">{{ user.first_name|first }}{{ user.last_name|first }}</div>
+        
+        <div class="profile-info">
+            <h3 class="section-title">Данные для заказа</h3>
+            <form method="post" class="profile-form">
+                {% csrf_token %}
+                <div class="form-blocks">
+                    <div class="form-column">
+                        <div class="form-field">
+                            <label for="id_first_name">Имя</label>
+                            <input type="text" name="first_name" value="{{ user.first_name|default_if_none:'' }}" id="id_first_name" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="id_last_name">Фамилия</label>
+                            <input type="text" name="last_name" value="{{ user.last_name|default_if_none:'' }}" id="id_last_name" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="id_email">Email</label>
+                            <input type="email" name="email" value="{{ user.email|default_if_none:'' }}" id="id_email" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="id_phon_num">Телефон</label>
+                            <input type="text" name="phon_num" value="{{ user.phon_num|default_if_none:'' }}" id="id_phon_num" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-column">
+                        <div class="form-field">
+                            <label for="id_city">Город</label>
+                            <input type="text" name="city" value="{{ form.instance.city|default_if_none:'' }}" id="id_city" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="id_adress1">Адрес 1</label>
+                            <input type="text" name="adress1" value="{{ user.adress1|default_if_none:'' }}" id="id_adress1" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="id_adress2">Адрес 2</label>
+                            <input type="text" name="adress2" value="{{ user.adress2|default_if_none:'' }}" id="id_adress2" class="form-input">
+                        </div>
+                        <div class="form-field">
+                            <label for="id_postal_code">Почтовый индекс</label>
+                            <input type="text" name="postal_code" value="{{ user.postal_code|default_if_none:'' }}" id="id_postal_code" class="form-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-note">
+                    <p>Эта информация будет использоваться при оформлении заказа.</p>
+                <div class="form-actions">
+                    <button type="submit" class="save-btn">Сохранить</button>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

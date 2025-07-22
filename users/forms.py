@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from phonenumber_field.formfields import PhoneNumberField
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserChangeForm
 from .models import CustomUser
 
 class RegistrUser(forms.ModelForm):
@@ -49,13 +49,18 @@ class LoginUserForm(AuthenticationForm):
             'class':'form-control',
         })
     )
-    
-class UserProfileForm(forms.ModelForm):
+
+class CustomUserUpdateForm(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ['first_name', 'last_name', 'email']
+        fields = ('first_name', 'last_name', 'email', 'phon_num', 'city', 
+                  'adress1', 'adress2',  'postal_code')
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'city': forms.TextInput(attrs={'class': 'form-cotrol',}),
+            'adress1': forms.TextInput(attrs={'class': 'form-control'}),
+            'adress2': forms.TextInput(attrs={'class': 'form-control'}),
+            'postal_code': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+
+    

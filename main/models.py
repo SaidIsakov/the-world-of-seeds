@@ -92,6 +92,8 @@ class Gallery(models.Model):
     products = models.ForeignKey(Product, on_delete=models.CASCADE,
                                  related_name='images')
     
+    def __str__(self):
+        return self.image.url
     
     class Meta:
         verbose_name = 'Image'
@@ -100,4 +102,8 @@ class Gallery(models.Model):
 
 class DescriptionImage(models.Model):
     decription_image = models.ImageField(upload_to='descriptoin_image')
-    products = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='decription_images')
+    products = models.ForeignKey(Product, on_delete=models.
+                                CASCADE,                             related_name='decription_images')
+    
+    def __str__(self):
+        return self.decription_image.url

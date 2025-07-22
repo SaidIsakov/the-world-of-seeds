@@ -1,6 +1,4 @@
 {% load static %}
-{% comment %} {% load cart_tags %}
-{% get_cart_quantity request as carts %} {% endcomment %}
 
     <header class="top-header">
         <div class="top-header-content">
@@ -65,7 +63,6 @@
                         <span class="cart-badge">{{ total_items }}</span>
                         {% endif %}
                         {% endwith %}
-                        
                     </a>
                     {% endif %}
                 </div>
