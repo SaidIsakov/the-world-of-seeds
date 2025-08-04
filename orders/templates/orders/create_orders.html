@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+    <!-- Main Content -->
+    <main class="container">
+        <div class="checkout-container">
+            <h1 class="checkout-title">Оформление заказа</h1>
+            
+            <div class="checkout-content">
+                <!-- Товары в корзине -->
+                <div class="checkout-section">
+                    <h2 class="section-title">Ваш заказ</h2>
+                    
+                    {% include "includes/cart_include.html" %}
+
+                <!-- Форма оформления -->
+                <div class="checkout-section">
+                    <h2 class="section-title">Данные получателя</h2>
+                    <form class="checkout-form" actions={% url "create-order" %}>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_first_name">Имя *</label>
+                                <input type="text" id="id_first_name" name="first_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_last_name">Фамилия *</label>
+                                <input type="text" id="id_last_name" name="last_name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_phon_num">Номер телефона *</label>
+                            <input type="tel" id="id_phon_num" name="phon_num" placeholder="+7 (999) 123-45-67" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_email">Email</label>
+                            <input type="email" id="id_email" name="email" placeholder="example@mail.ru">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_delivery_address">Адрес доставки *</label>
+                            <textarea id="id_delivery_address" name="delivery_address" rows="3" placeholder="Укажите полный адрес доставки" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_city">Город</label>
+                            <textarea id="id_city" name="city" rows="3" placeholder="Укажите ваш город в котором вы проживаете" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_postal_code">Почтовый индекс</label>
+                            <input type="tel" id="id_postal_code" name="postal_code" placeholder="" required>
+                        </div>
+
+                        <!-- Способ доставки -->
+                        <div class="delivery-section">
+                            <label for="delivery" class="subsection-title">Способ доставки</label>
+                            <div class="radio-group">
+                                <input type="radio" name="requires_delivery" id="id_requires_delivery" value="1" checked>
+                                <label class="radio-option" for="id_requires_delivery">Доставка курьером</label>
+        
+                                <input type="radio" name="requires_delivery" value="0"
+                                id="id_requires_delivery">
+                                <label class="radio-option" for="id_requires_delivery">Самовывоз</label>
+                            </div>
+                        </div>
+                        <label for="">Способ оплаты</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock main %}

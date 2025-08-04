@@ -44,11 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'phonenumber_field',#для добавления номера телефона(библиотека)
+    
     #APP
     'main',
     'news',
     'users',
     'cart',
+    'orders',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
@@ -145,7 +147,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'main/static',
     BASE_DIR / 'news/static',
     BASE_DIR / 'users/static',
-    BASE_DIR / 'cart/static'
+    BASE_DIR / 'cart/static',
+    BASE_DIR / 'orders/static',
 ]
 
 MEDIA_URL = '/media/'
@@ -158,3 +161,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
+
+STRIPE_TEST_PUBLIC_KEY = os.getenv('STRIPE_TEST_PUBLIC_KEY')
+STRIPE_TEST_SECRET_KEY = os.getenv('STRIPE_TEST_SECRET_KEY')

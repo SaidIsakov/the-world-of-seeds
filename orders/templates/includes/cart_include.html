@@ -1,11 +1,5 @@
-{% extends "base.html" %}
 {% load static %}
-
-
- {% block main %}
-  <h1 class="cart-title" >Корзина</h1>
-  {% if cart %}
-  <table class="cart">
+<table class="cart">
     <thead>
 <tr>
 <th>Изображение</th>
@@ -13,7 +7,7 @@
 <th>Количество</th>
 <th>Удалить</th>
 <th>Цена</th>
-<th>Итоговая Цена</th>
+<th>Итоговая цена</th>
 </tr>
 </thead>
 <tbody>
@@ -57,12 +51,3 @@ method="post">
 </tr>
 </tbody>
 </table>
-<p class="text-right">
-<a href="{% url "index" %}" class="button
-    light">Продолжить покупки</a>
-    <a href="{% url "create-order" %}" class="button">Оформить заказ</a>
-</p>
-{% else %}
-<h1 class="empty-cart">Ваша корзина пуста</h1>
-{% endif %}
-{% endblock %}

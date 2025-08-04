@@ -46,9 +46,14 @@
                         <span class="header-icon-symbol">👤</span>
                         <span>МОЙ АККАУНТ</span>
                     </a>
-                    <a href="{% url "login" %}" class="header-icon">
+                    <a href="{% url "cart_detail" %}" class="header-icon">
                         <div class="header-icon-symbol">🛒</div>
                         <span>Корзина</span>
+                        {% with total_items=cart|length %}
+                        {% if total_items > 0 %}
+                        <span class="cart-badge">{{ total_items }}</span>
+                        {% endif %}
+                        {% endwith %}
                     </a>
                     {% else %}
                     <a href="{% url "profile" %}" class="header-icon">

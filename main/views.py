@@ -21,6 +21,7 @@ class IndexView(TemplateView):
         })
         return context
     
+    
 class ProductDetailView(DetailView):
     """ Страница товара """
     model = Product
@@ -81,6 +82,7 @@ class ProductListView(ListView):
         context['title'] = subcategory.title  # Заголовок = название подкатегории
         return context
 
+
 class SearchResultsView(TemplateView):
     """Результаты поиска"""
     template_name = 'components/search_results.html'
@@ -95,6 +97,7 @@ class SearchResultsView(TemplateView):
             context['result'] = []
         return context
 
+
 class About_us(TemplateView):
     """ Страница 'О нас' """
     template_name = 'main/about_us.html'
@@ -105,8 +108,7 @@ class About_us(TemplateView):
         return context
     
     
-    
-    
+
 class ContactsView(TemplateView):
     """ страница контактов """
     template_name = 'main/contacts.html'

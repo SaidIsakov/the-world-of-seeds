@@ -47,9 +47,10 @@
                 
                  <div class="price-section">
                     <span class="current-price">{{ product.price }} ₽</span>
-                </div> 
+                </div>
+
                 {% if product.availability %}
-                    
+
                 <form action="{% url "cart_add" product.id %}" method='post'>
                 {{ cart_product_form }}
                 {% csrf_token %}

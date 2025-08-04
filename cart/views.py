@@ -4,6 +4,7 @@ from .forms import CartAddProductForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
+from django.http import HttpRequest
 
 
 @require_POST

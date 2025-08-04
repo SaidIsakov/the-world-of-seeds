@@ -1,8 +1,5 @@
-from django.shortcuts import render
 from .models import New
-from django.views.generic import TemplateView, DetailView, ListView
-from django.shortcuts import get_object_or_404
-# Create your views here.
+from django.views.generic import ListView
 
 
 

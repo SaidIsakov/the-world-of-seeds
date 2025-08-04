@@ -9,5 +9,5 @@ img
 .env
 tests
 pytest.ini
-
+.pytest_cache
 requirements.txt
