@@ -12,12 +12,12 @@ class Order(models.Model):
     ]
     
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    phon_num = PhoneNumberField(unique=True,verbose_name='Номер телефона', region='RU')
+    phon_num = models.CharField(unique=True,verbose_name='Номер телефона')
     email = models.EmailField(unique=True,verbose_name='Email', max_length=254)
     first_name = models.CharField(max_length=150,verbose_name='Имя')
     last_name = models.CharField(max_length=150,verbose_name='Фамилия')
     city = models.CharField(max_length=100)
-    delivered_address = models.CharField(max_length=100)
+    adress1 = models.CharField(max_length=100)
     postal_code = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now_add=True)
     tracking_number = models.CharField(max_length=40, blank=True, default='pending')
