@@ -1,45 +1,55 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block main %}
+<!-- Main Content -->
+<main class="container">
+  <div class="checkout-container">
+    <h1 class="checkout-title">Оформление заказа</h1>
 
-{% block main %}
-    <!-- Main Content -->
-    <main class="container">
-        <div class="checkout-container">
-            <h1 class="checkout-title">Оформление заказа</h1>
-            
-            <div class="checkout-content">
-                <!-- Товары в корзине -->
-                <div class="checkout-section">
-                    <h2 class="section-title">Ваш заказ</h2>
-                    
-                    {% include "includes/cart_include.html" %}
-                </div>
+    <div class="checkout-content">
+      <!-- Товары в корзине -->
+      <div class="checkout-section">
+        <h2 class="section-title">Ваш заказ</h2>
 
-                <!-- Форма оформления -->
-                <div class="checkout-section">
-                    <h2 class="section-title">Данные получателя</h2>
-                    <form class="checkout-form" method='post'>
-                        {% csrf_token %}
-                        <div class="form-row">
-                            <div class="form-group">
-                                {{ form.first_name.label_tag }} {{ form.first_name }}
-                                {{ form.last_name.label_tag }} {{ form.last_name }}
-                                {{ form.phon_num.label_tag }} {{ form.phon_num }}
-                                {{ form.email.label_tag }} {{ form.email }}
-                                <label for="if_city">Город</label> {{ form.city }}
-                                <label for="id_adress1">Почтовый адресс</label> {{ form.adress1 }}
-                                <label for="id_postal_code">Почтовый индекс</label> {{ form.postal_code }}
-                            </div>
-                        </div>
-                        <button type="submit" class="payment-btn">
-                            Перейти к оплате
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </button>
-                    </form>
-                </div>
+        {% include "includes/cart_include.html" %}
+      </div>
+
+      <!-- Форма оформления -->
+      <div class="checkout-section">
+        <h2 class="section-title">Данные получателя</h2>
+        <form class="checkout-form" method="post">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group">
+              {{ form.first_name.label_tag }} {{ form.first_name }}
+              {{form.last_name.label_tag }} {{ form.last_name }}
+              {{ form.phon_num.label_tag }} {{ form.phon_num }}
+              {{ form.email.label_tag }} {{ form.email }}
+              <label for="if_city">Город</label> {{ form.city }}
+              <label for="id_adress1">Почтовый адресс</label> {{ form.adress1 }}
+              <label for="id_postal_code">Почтовый индекс</label>
+              {{ form.postal_code }}
             </div>
-        </div>
-    </main>
+          </div>
+          <button type="submit" class="payment-btn">
+            Перейти к оплате
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-arrow-right"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
 {% endblock main %}

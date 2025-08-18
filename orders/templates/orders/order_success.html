@@ -13,15 +13,17 @@
                 В ближайшее время с вами свяжется наш менеджер для подтверждения заказа.
             </p>
             
+            {% comment %} {% for order_info in order_info %}
             <div class="order-details">
                 <h3>Детали заказа</h3>
                 <p><strong>Номер заказа:</strong> #123456</p>
-                <p><strong>Дата заказа:</strong> 12 июня 2023</p>
+                <p><strong>Дата заказа:</strong> {{ order_info.created_at }} </p>
                 <p><strong>Способ оплаты:</strong> Банковская карта</p>
                 <p><strong>Способ доставки:</strong> Курьерская доставка</p>
-                <p><strong>Сумма заказа:</strong> 5 990 ₽</p>
+                <p><strong>Сумма заказа:</strong>{{  }}</p>
             </div>
-            
+            {% endfor %} {% endcomment %}
+
             <div class="success-buttons">
                 <a href="{% url "index" %}" class="btn btn-back">Вернуться к покупкам</a>
             </div>

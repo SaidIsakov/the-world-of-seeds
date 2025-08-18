@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-# Create your models here.
+from ckeditor.fields import RichTextField
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
@@ -55,8 +55,8 @@ class Product(models.Model):
     manufacturer = models.CharField(max_length=50)
     quantity = models.TextField(blank=True, null=True)
     price = models.FloatField()
-    discription = models.TextField(max_length=5000, null=True, blank=True)
-    additional_information = models.TextField(max_length=1000, null=True, blank=True)
+    discription = RichTextField(max_length=5000, null=True, blank=True)
+    additional_information = RichTextField(max_length=2000, null=True, blank=True)
     availability = models.BooleanField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='products')

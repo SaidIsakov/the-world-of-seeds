@@ -70,9 +70,9 @@
                 <img src="{{ decription_image.decription_image.url }}" class="product-discription-photo">
                 {% endfor %}
             <div class="description-content">
-                <p>{{ product.discription|linebreaks }}</p>
+                <p>{{ product.discription|safe }}</p>
                 <h2 class="description-title">Дополнительная информация</h2>
-                <p>{{ product.additional_information|linebreaks }}</p>
+                <p>{{ product.additional_information|safe }}</p>
             </div> 
         </div>
     </main>

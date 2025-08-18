@@ -1,42 +1,46 @@
-{% extends "base.html" %}
-{% load static %}
-{% block main %}
+{% extends "base.html" %} {% load static %} {% block main %}
 
-    <div class="container">
-        <h1 class="title">Производители</h1>
-        
-        <div class="manufacturers-grid">
-            <div class="manufacturer-card">
-                <img src="{% static "main/img/bejo-logo--250x80.jpg" %}" alt="BEJO" class="manufacturer-logo">
-            </div>
+<div class="container">
+  <h1 class="title">Производители</h1>
 
-            <!-- Карточка 2 -->
-            <div class="manufacturer-card">
-                <img src="{% static "main/img/Adama-250x250-250x80.png" %}" alt="ADAMA" class="manufacturer-logo">
-            </div>
-
-            <!-- Карточка 3 -->
-            <div class="manufacturer-card">
-                <img src="{% static "main/img/sakata_logo-250x80.jpg" %}" alt="SAKATA" class="manufacturer-logo">
-                <!-- <div class="placeholder-text">Логотип 3</div> -->
-            </div>
-
-            <!-- Карточка 4 -->
-            <div class="manufacturer-card">
-                <img src="{% static "main/img/syngenta-logo-250x80.jpg" %}" alt="SINGENTA" class="manufacturer-logo">
-            </div>
-
-            <!-- Карточка 5 -->
-            <div class="manufacturer-card">
-                <img src="{% static "main/img/seminis_logo-250x80.jpg" %}" alt="SEMENIS" class="manufacturer-logo">
-            </div>
-
-            <!-- Карточка 6 -->
-            <div class="manufacturer-card">
-                <img src="{% static "main/img/Planteco_logo-250x80.jpg" %}" alt="PLANTECO" class="manufacturer-logo">
-                <!-- <div class="placeholder-text">Логотип 6</div> -->
-            </div>
-        </div>
+  <div class="manufacturers-grid">
+    <div class="manufacturer-card">
+      <img src="{% static "main/img/bejo-logo--250x80.jpg" %}" alt="BEJO"
+      class="manufacturer-logo">
     </div>
+
+    <!-- Карточка 2 -->
+    <div class="manufacturer-card">
+      <img src="{% static "main/img/Adama-250x250-250x80.png" %}" alt="ADAMA"
+      class="manufacturer-logo">
+    </div>
+
+    <!-- Карточка 3 -->
+    <div class="manufacturer-card">
+      <img src="{% static "main/img/sakata_logo-250x80.jpg" %}" alt="SAKATA"
+      class="manufacturer-logo">
+      <!-- <div class="placeholder-text">Логотип 3</div> -->
+    </div>
+
+    <!-- Карточка 4 -->
+    <div class="manufacturer-card">
+      <img src="{% static "main/img/syngenta-logo-250x80.jpg" %}" alt="SINGENTA"
+      class="manufacturer-logo">
+    </div>
+
+    <!-- Карточка 5 -->
+    <div class="manufacturer-card">
+      <img src="{% static "main/img/seminis_logo-250x80.jpg" %}" alt="SEMENIS"
+      class="manufacturer-logo">
+    </div>
+
+    <!-- Карточка 6 -->
+    <div class="manufacturer-card">
+      <img src="{% static "main/img/Planteco_logo-250x80.jpg" %}" alt="PLANTECO"
+      class="manufacturer-logo">
+      <!-- <div class="placeholder-text">Логотип 6</div> -->
+    </div>
+  </div>
+</div>
 
 {% endblock main %}
