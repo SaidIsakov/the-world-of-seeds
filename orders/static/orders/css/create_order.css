@@ -1,7 +1,15 @@
+/* Стили для информационного блока о доставке */
 .checkout-container {
   padding: 30px 0;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    .checkout-section {
+        width: 1200px;
+        
+    }
 }
 
 .checkout-title {
@@ -26,11 +34,21 @@
   }
 }
 
+
 .checkout-section {
   background: white;
   border-radius: 10px;
   padding: 25px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  width: 1100px;
+}
+
+@media (max-width: 480px) {
+    .checkout-section {
+        width: 310px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 .section-title {
@@ -121,4 +139,54 @@
 
 .payment-btn:hover svg {
   transform: translateX(3px);
+}
+
+.delivery-info {
+  grid-column: 1 / -1; 
+  margin-top: -20px;
+}
+
+.alert-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  border-radius: 8px;
+}
+
+.alert-note svg {
+  color: #2196f3;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-content strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #1565c0;
+  font-size: 18px;
+}
+
+.alert-content p {
+  margin: 0;
+  color: #37474f;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .alert-note {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .alert-note svg {
+    align-self: center;
+  }
 }

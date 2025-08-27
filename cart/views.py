@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest
 
 
+
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
@@ -16,9 +17,9 @@ def cart_add(request, product_id):
         cd = form.cleaned_data
         cart.add(product=product,
                  quantity=cd['quantity'],
-                 override_quantity=['override_quantity']
+                 override_quantity=['override']
                 )
-    return redirect('cart_detail')
+    return redirect(request.META['HTTP_REFERER'])
 
 @require_POST
 def cart_remove(request, product_id):

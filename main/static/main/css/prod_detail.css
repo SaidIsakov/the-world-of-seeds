@@ -197,16 +197,17 @@
 }
 
 .quantity-btn {
-    background: #f8f9fa;
+    background: #4CAF50;
     border: none;
     padding: 12px 15px;
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease;
+    border-radius: 10px;
 }
 
 .quantity-btn:hover {
-    background: #e9ecef;
+    background: #3e8e41;
 }
 
 .quantity-input {

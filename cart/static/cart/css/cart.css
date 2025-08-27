@@ -1,23 +1,23 @@
 .main {
-    padding: 30px 0;
+    padding: 20px 0;
     background-color: #f9f9f9;
     min-height: calc(100vh - 200px);
 }
 
 .cart-title {
-    margin-top: 20px;
-    font-size: 2.2rem;
+    margin-top: 15px;
+    font-size: 2rem;
     color: #333;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-weight: normal;
 }
 
-.empty-cart{
+.empty-cart {
     color: #4CAF50;
-    margin-bottom: 25%;
-    margin-top: 5%;
+    margin: 10% auto;
     text-align: center;
+    padding: 0 20px;
 }
 
 .cart {
@@ -33,13 +33,13 @@
 .cart th {
     background-color: #4CAF50;
     color: white;
-    padding: 15px;
+    padding: 15px 12px;
     text-align: left;
     font-weight: 500;
 }
 
 .cart td {
-    padding: 15px;
+    padding: 12px;
     border-bottom: 1px solid #eee;
     vertical-align: middle;
 }
@@ -72,6 +72,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
+    text-align: center;
 }
 
 .cart input[type="submit"] {
@@ -86,7 +87,7 @@
 }
 
 .cart input[type="submit"]:hover {
-    background-color: #4CAF50;
+    background-color: #3e8e41;
 }
 
 .num {
@@ -114,9 +115,13 @@
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     margin-left: 10px;
     margin-bottom: 40px;
+}
+
+.button:hover {
+  background-color: #3e8e41;
 }
 
 .button.light {
@@ -124,37 +129,279 @@
     color: #333;
 }
 
-
-
 .button.light:hover {
     background-color: #e0e0e0;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
+/* Большие планшеты и маленькие десктопы (992px - 1199px) */
+@media (max-width: 1199px) {
+    .cart-title {
+        font-size: 1.8rem;
+    }
+    
+    .cart th,
+    .cart td {
+        padding: 12px 10px;
+    }
+    
+    .cart img {
+        max-width: 70px;
+    }
+}
+
+/* Планшеты (768px - 991px) */
+@media (max-width: 991px) {
+    .main {
+        padding: 15px 0;
+    }
+    
+    .cart-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
     .cart {
         display: block;
         overflow-x: auto;
+        margin-bottom: 25px;
     }
     
-    .cart th, 
+    .cart th,
     .cart td {
         padding: 10px 8px;
         font-size: 14px;
+        white-space: nowrap;
+    }
+    
+    .cart img {
+        max-width: 60px;
+    }
+    
+    .cart input[type="number"] {
+        width: 50px;
+        padding: 6px 8px;
+    }
+    
+    .cart input[type="submit"] {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .text-right {
+        text-align: center;
+        margin-bottom: 30px;
     }
     
     .button {
         padding: 10px 20px;
         font-size: 14px;
+        margin: 5px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Большие мобильные (576px - 767px) */
+@media (max-width: 767px) {
+    .cart-title {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 15px;
     }
     
-    .text-right {
+    .empty-cart {
+        margin: 15% auto;
+    }
+    
+    .cart th,
+    .cart td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+    
+    .cart th:nth-child(3),
+    .cart th:nth-child(4),
+    .cart th:nth-child(5) {
         text-align: center;
+    }
+    
+    .cart td:nth-child(3),
+    .cart td:nth-child(5) {
+        text-align: center;
+    }
+    
+    .cart img {
+        max-width: 50px;
+    }
+    
+    .cart input[type="number"] {
+        width: 45px;
+        padding: 5px 6px;
+        font-size: 13px;
+    }
+    
+    .cart input[type="submit"] {
+        padding: 5px 10px;
+        font-size: 12px;
     }
     
     .button {
         display: block;
         width: 100%;
         margin: 10px 0;
+        padding: 12px 20px;
+    }
+    
+    .text-right .button {
+        display: inline-block;
+        width: auto;
+        margin: 5px;
+    }
+}
+
+/* Мобильные средние (480px - 575px) */
+@media (max-width: 575px) {
+    .main {
+        padding: 10px 0;
+    }
+    
+    .cart-title {
+        font-size: 1.4rem;
+    }
+    
+    .cart {
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .cart th,
+    .cart td {
+        padding: 6px 4px;
+        font-size: 12px;
+    }
+    
+    .cart th {
+        padding: 10px 6px;
+    }
+    
+    .cart img {
+        max-width: 40px;
+    }
+    
+    .cart a {
+        font-size: 11px;
+    }
+    
+    .cart input[type="number"] {
+        width: 40px;
+        padding: 4px 5px;
+        font-size: 12px;
+    }
+    
+    .cart input[type="submit"] {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .total {
+        font-size: 16px;
+    }
+    
+    .text-right {
+        margin-bottom: 25px;
+    }
+    
+    .button {
+        padding: 10px 15px;
+        font-size: 13px;
+        margin: 8px 0;
+    }
+}
+
+/* Маленькие мобильные (320px - 479px) */
+@media (max-width: 479px) {
+    .cart-title {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .empty-cart {
+        margin: 20% auto;
+        font-size: 0.9rem;
+    }
+    
+    .cart {
+        font-size: 11px;
+    }
+    
+    .cart th,
+    .cart td {
+        padding: 5px 3px;
+        font-size: 11px;
+    }
+    
+    .cart th {
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+    
+    .cart img {
+        max-width: 35px;
+    }
+    
+    .cart input[type="number"] {
+        width: 35px;
+        padding: 3px 4px;
+        font-size: 11px;
+    }
+    
+    .cart input[type="submit"] {
+        padding: 3px 6px;
+        font-size: 10px;
+    }
+    
+    .num {
+        font-size: 11px;
+    }
+    
+    .total {
+        font-size: 14px;
+    }
+    
+    .button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Ориентация landscape для мобильных */
+@media (max-height: 480px) and (orientation: landscape) {
+    .main {
+        min-height: auto;
+        padding: 10px 0;
+    }
+    
+    .cart-title {
+        margin: 10px 0 15px 0;
+        font-size: 1.3rem;
+    }
+    
+    .empty-cart {
+        margin: 5% auto;
+    }
+}
+
+/* Уменьшение motion для доступности */
+@media (prefers-reduced-motion: reduce) {
+    .cart a,
+    .cart input[type="submit"],
+    .button {
+        transition: none;
+    }
+}
+
+/* Высокопиксельные дисплеи */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .cart img {
+        image-rendering: -webkit-optimize-contrast;
     }
 }

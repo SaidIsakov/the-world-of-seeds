@@ -15,11 +15,11 @@ class RegistrUser(forms.ModelForm):
         error_messages={'max_length': 'Фамилия не должна превышать 50 символов.'},
         widget=forms.TextInput(attrs={'placeholder': 'Введите Фамилию'})
     )
-    phon_num = PhoneNumberField(
+    phon_num = PhoneNumberField(label='Номер телефона',
         error_messages={'invalid': 'Введите корректный номер телефона(должен начинаться с +7).','unique':'Такой номер телефона уже зарегестрирован'},
         widget=forms.TextInput(attrs={
             'placeholder': '+7 (_) _--',
-            'class': 'form-control'
+            'class': 'form-control',
         })
     )
     email = forms.EmailField(
@@ -44,7 +44,7 @@ class RegistrUser(forms.ModelForm):
         fields = ['first_name', 'last_name', 'phon_num', 'email', 'password']
         
 class LoginUserForm(AuthenticationForm):
-    password = forms.CharField(
+    password = forms.CharField(label='Пароль',
         widget=forms.PasswordInput(attrs={
             'class':'form-control',
         })

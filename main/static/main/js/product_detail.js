@@ -42,12 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mainImage.alt = img.alt;
     }
     
-    
-    document.querySelector('.main-image-container').insertAdjacentHTML('beforeend',navHTML);
-    
-    // Обработчики для кнопок навигации
-    document.querySelector('.prev').addEventListener('click', () => showImage(currentIndex - 1));
-    document.querySelector('.next').addEventListener('click', () => showImage(currentIndex + 1));
+       
     
     // Инициализация - показываем первое изображение
     showImage(0);

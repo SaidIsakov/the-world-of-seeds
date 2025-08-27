@@ -38,9 +38,9 @@ def create_order(request):
                     last_name=form.cleaned_data.get('last_name'),
                     phon_num=form.cleaned_data.get('phon_num'),
                     email=form.cleaned_data.get('email'),
-                    city=form.cleaned_data.get('city'),
-                    adress1=form.cleaned_data.get('adress1'),
-                    postal_code=form.cleaned_data.get('postal_code'),
+                    # city=form.cleaned_data.get('city'),
+                    # adress1=form.cleaned_data.get('adress1'),
+                    # postal_code=form.cleaned_data.get('postal_code'),
                 )
                 order.save()
 
@@ -51,7 +51,7 @@ def create_order(request):
                         quantity=item['quantity'],
                         total_price=item['total_price']
                     )
-
+              
                 # Создаем платеж в ЮKassa
                 idempotence_key = str(uuid.uuid4())
                 payment = Payment.create({
@@ -74,6 +74,8 @@ def create_order(request):
                 order.payment_id = payment.id
                 order.save()
 
+                
+
                 return redirect(payment.confirmation.confirmation_url, code=303)
 
             except Exception as e:
@@ -90,9 +92,9 @@ def create_order(request):
         'last_name': request.user.last_name,
         'phon_num': request.user.phon_num,
         'email': request.user.email,
-        'city': request.user.city,
-        'adress1': request.user.adress1,
-        'postal_code': request.user.postal_code,
+        # 'city': request.user.city,
+        # 'adress1': request.user.adress1,
+        # 'postal_code': request.user.postal_code,
     })
 
     return render(request, 'orders/create_orders.html', {
@@ -105,6 +107,7 @@ def order_success(request):
     # Очищаем корзину
     cart = Cart(request)
     cart.clear()
+    del request.session['cart']
     
     order_id = request.GET.get('order_id')
     context = {}

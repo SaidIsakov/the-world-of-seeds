@@ -12,6 +12,22 @@
         {% include "includes/cart_include.html" %}
       </div>
 
+      <!-- Информация о доставке -->
+      <div class="checkout-section delivery-info">
+        <h2 class="section-title">Информация о доставке</h2>
+        <div class="alert-note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <div class="alert-content">
+            <strong>Важно!</strong>
+            <p>Мы не занимаемся доставкой. Свой товар вы можете забрать в нашем магазине по адресу <b>БЛА-БЛА-БЛА</b>.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Форма оформления -->
       <div class="checkout-section">
         <h2 class="section-title">Данные получателя</h2>
@@ -23,10 +39,10 @@
               {{form.last_name.label_tag }} {{ form.last_name }}
               {{ form.phon_num.label_tag }} {{ form.phon_num }}
               {{ form.email.label_tag }} {{ form.email }}
-              <label for="if_city">Город</label> {{ form.city }}
+              {% comment %} <label for="if_city">Город</label> {{ form.city }}
               <label for="id_adress1">Почтовый адресс</label> {{ form.adress1 }}
               <label for="id_postal_code">Почтовый индекс</label>
-              {{ form.postal_code }}
+              {{ form.postal_code }} {% endcomment %}
             </div>
           </div>
           <button type="submit" class="payment-btn">

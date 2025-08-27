@@ -39,22 +39,22 @@
                         </div>
                     </div>
                     <div class="form-column">
-                        <div class="form-field">
+                        {% comment %} <div class="form-field">
                             <label for="id_city">Город</label>
                             <input type="text" name="city" value="{{ form.instance.city|default_if_none:'' }}" id="id_city" class="form-input">
-                        </div>
-                        <div class="form-field">
+                        </div> {% endcomment %}
+                        {% comment %} <div class="form-field">
                             <label for="id_adress1">Адрес 1</label>
                             <input type="text" name="adress1" value="{{ user.adress1|default_if_none:'' }}" id="id_adress1" class="form-input">
-                        </div>
-                        <div class="form-field">
+                        </div> {% endcomment %}
+                        {% comment %} <div class="form-field">
                             <label for="id_adress2">Адрес 2</label>
                             <input type="text" name="adress2" value="{{ user.adress2|default_if_none:'' }}" id="id_adress2" class="form-input">
-                        </div>
-                        <div class="form-field">
+                        </div> {% endcomment %}
+                        {% comment %} <div class="form-field">
                             <label for="id_postal_code">Почтовый индекс</label>
                             <input type="text" name="postal_code" value="{{ user.postal_code|default_if_none:'' }}" id="id_postal_code" class="form-input">
-                        </div>
+                        </div> {% endcomment %}
                     </div>
                 </div>
                 <div class="form-note">

@@ -66,7 +66,7 @@ class SubcategoryView(ListView):
     
 
 class ProductListView(ListView):
-    """ Список товаров для конкретной категории """
+    """ Список товаров для конкретной подкатегории """
     template_name = 'main/product_list.html'
     context_object_name = 'products'
     

@@ -1,23 +1,34 @@
-<h1 class="section-title-popular-products">Популярные товары</h1>
-<div class="products-grid">
-    {% for popular_product in is_popular_products %}
-        <!-- Product Card -->
-        <a href="{{ popular_product.get_absolute_url }}" class="grid-product-card-link">
-            <div class="grid-product-card">         
-                <div class="grid-product-image">             
-                    <img src="{{ popular_product.get_first_photo }}" alt="{{ popular_product.title }}">             
-                </div>
-                <div class="grid-product-info">
-                    <div class="grid-product-manufacturer">{{ popular_product.manufacturer }}</div>
-                    <div class="grid-product-name">{{ popular_product.title }}</div>
-                    <div class="grid-product-price">
-                        <span>{{ popular_product.price }} ₽</span>
+<div class="popular-section">
+    <div class="section-header">
+        <h1 class="section-title-popular-products">Популярные товары</h1>
+        <div class="nav-arrows">
+            <button class="arrow-btn prev-btn" disabled>←</button>
+            <button class="arrow-btn next-btn">→</button>
+        </div>
+    </div>
+    
+    <div class="products-container">
+        <div class="products-grid">
+            {% for popular_product in is_popular_products %}
+                <!-- Product Card -->
+                <a href="{{ popular_product.get_absolute_url }}" class="grid-product-card-link">
+                    <div class="grid-product-card">         
+                        <div class="grid-product-image">             
+                            <img src="{{ popular_product.get_first_photo }}" alt="{{ popular_product.title }}">             
+                        </div>
+                        <div class="grid-product-info">
+                            <div class="grid-product-manufacturer">{{ popular_product.manufacturer }}</div>
+                            <div class="grid-product-name">{{ popular_product.title }}</div>
+                            <div class="grid-product-price">
+                                <span>{{ popular_product.price }} ₽</span>
+                            </div>
+                            <button class="buy-button">
+                                🛒 КУПИТЬ
+                            </button>
+                        </div>
                     </div>
-                    <button class="buy-button">
-                            🛒 КУПИТЬ
-                    </button>
-                </div>
-            </div>
-        </a>
-    {% endfor %}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
 </div>

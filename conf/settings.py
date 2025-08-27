@@ -128,10 +128,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Cart
 CART_SESSION_ID = 'cart'
+SESSION_COOKIE_AGE = 86400
 
 # Stripe
 STRIPE_TEST_PUBLIC_KEY = config('STRIPE_TEST_PUBLIC_KEY')
