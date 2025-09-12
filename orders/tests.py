@@ -1,126 +1,47 @@
-from django.test import TestCase
-
-# Create your tests here.
-from venv import logger
-from django.shortcuts import render,redirect
-import stripe.error
-import stripe.oauth_error
-from cart.cart import Cart
-from .forms import OrderForm
-import stripe
+from django.db import models
+from main.models import Product
 from django.conf import settings
-from django.contrib.auth.decorators import login_required
-from .models import Order, OrderItem
-import yookassa
-from yookassa import Payment, Configuration
-from django.http import HttpResponse, JsonResponse
-import logging
-import uuid
+from phonenumber_field.modelfields import PhoneNumberField
+
+class Order(models.Model):
+    STATUS_CHOICES = [
+        ('ponding', 'Pending'),
+        ('shipped', 'Shipped'),
+        ('delivered', 'Delivered'),
+        ('canceled', 'Canceled'),
+    ]
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    phon_num = models.CharField(unique=True,verbose_name='Номер телефона')
+    email = models.EmailField(unique=True,verbose_name='Email', max_length=254)
+    first_name = models.CharField(max_length=150,verbose_name='Имя')
+    last_name = models.CharField(max_length=150,verbose_name='Фамилия')
+    # city = models.CharField(max_length=100)
+    # adress1 = models.CharField(max_length=100)
+    # postal_code = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+    tracking_number = models.CharField(max_length=40, blank=True, default='pending')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
 
 
-# Конфигурация Stripe
-stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
+    def __str__(self):
+        return f'Заказ {self.id} | Пользователь {self.email}'
 
-# Конфигурация Yookassa 
-yookassa.Configuration.account_id = settings.YOOKASSA_SHOP_ID
-yookassa.Configuration.secret_key = settings.YOOKASSA_SECRET_KEY
+    class Meta:
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
 
 
-@login_required(login_url='/user/login/')
-def create_order(request):
-    cart = Cart(request)
+    def __str__(self):
+        return f'Товар {self.product} | Заказ {self.order.pk}'
 
-    # Проверка на пустую корзину
-    if not cart:
-        return redirect('cart_detail')
-
-    if request.method == 'POST':
-        form = OrderForm(request.POST)
-        if form.is_valid():
-            try:
-                # Создаем заказ в базе данных сначала
-                order = Order(
-                    user=request.user,
-                    first_name=form.cleaned_data.get('first_name'),
-                    last_name=form.cleaned_data.get('last_name'),
-                    phon_num=form.cleaned_data.get('phon_num'),
-                    email=form.cleaned_data.get('email'),
-                    city=form.cleaned_data.get('city'),
-                    adress1=form.cleaned_data.get('adress1'),
-                    postal_code=form.cleaned_data.get('postal_code'),
-                )
-                order.save()
-
-                for item in cart:
-                    OrderItem.objects.create(
-                        order=order,
-                        product=item['product'],
-                        quantity=item['quantity'],
-                        total_price=item['total_price']
-                    )
-
-                # Создаем платеж в ЮKassa
-                idempotence_key = str(uuid.uuid4())
-                payment = Payment.create({
-                    "amount": {
-                        "value": str(cart.get_total_price()),
-                        "currency": "RUB"
-                    },
-                    "confirmation": {
-                        "type": "redirect",
-                        "return_url": request.build_absolute_uri(f'/orders/order_success/?order_id={order.id}')
-                    },
-                    "capture": True,
-                    "description": f"Заказ №{order.id}",
-                    "metadata": {
-                        "order_id": order.id
-                    }
-                }, idempotence_key)
-
-                # Сохраняем ID платежа в заказе
-                order.payment_id = payment.id
-                order.save()
-
-                return redirect(payment.confirmation.confirmation_url, code=303)
-
-            except Exception as e:
-                logger.error(f"YooKassa error: {str(e)}")
-                return render(request, 'orders/create_orders.html', {
-                    'form': form,
-                    'cart': cart,
-                    'error': "Ошибка обработки платежа. Пожалуйста, попробуйте еще раз.",
-                })
-
-    # Заполняем форму начальными данными пользователя
-    form = OrderForm(initial={
-        'first_name': request.user.first_name,
-        'last_name': request.user.last_name,
-        'phon_num': request.user.phon_num,
-        'email': request.user.email,
-        'city': request.user.city,
-        'adress1': request.user.adress1,
-        'postal_code': request.user.postal_code,
-    })
-
-    return render(request, 'orders/create_orders.html', {
-        'form': form,
-        'cart': cart,
-    })
-
-@login_required(login_url='users/login/')
-def order_success(request):
-    # Очищаем корзину
-    cart = Cart(request)
-    cart.clear()
-    
-    order_id = request.GET.get('order_id')
-    context = {}
-    
-    if order_id:
-        try:
-            order = Order.objects.get(id=order_id)
-            context['order'] = order
-        except Order.DoesNotExist:
-            pass
-    
-    return render(request, 'orders/order_success.html', context)
+    class Meta:
+        verbose_name = 'OrderItem'
+        verbose_name_plural = 'OrderItems'
+        

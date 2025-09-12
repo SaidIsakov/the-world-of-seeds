@@ -9,12 +9,15 @@ from .models import Order, OrderItem
 import yookassa
 from yookassa import Payment
 import uuid
+from yookassa.domain.exceptions import BadRequestError, ForbiddenError, NotFoundError
+from django.http import JsonResponse
+from django.contrib import messages
 
 
 # Конфигурация Stripe
 stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
 
-# Конфигурация Yookassa 
+# Конфигурация Yookassa
 yookassa.Configuration.account_id = settings.YOOKASSA_SHOP_ID
 yookassa.Configuration.secret_key = settings.YOOKASSA_SECRET_KEY
 
@@ -51,8 +54,9 @@ def create_order(request):
                         quantity=item['quantity'],
                         total_price=item['total_price']
                     )
-              
+
                 # Создаем платеж в ЮKassa
+
                 idempotence_key = str(uuid.uuid4())
                 payment = Payment.create({
                     "amount": {
@@ -73,18 +77,65 @@ def create_order(request):
                 # Сохраняем ID платежа в заказе
                 order.payment_id = payment.id
                 order.save()
-
-                
-
                 return redirect(payment.confirmation.confirmation_url, code=303)
 
-            except Exception as e:
-                logger.error(f"YooKassa error: {str(e)}")
+            except BadRequestError as e:
+              logger.error(f"YooKassa BadRequestError: {e}")
+              return JsonResponse({
+            'status': 'error',
+            'message': 'Неверные параметры запроса',
+            'details': str(e)
+        }, status=400)
+
+            except BadRequestError as e:
+                logger.error(f"YooKassa BadRequestError: {e}")
+                messages.error(request, f'Ошибка запроса: {str(e)}')
                 return render(request, 'orders/create_orders.html', {
                     'form': form,
                     'cart': cart,
-                    'error': "Ошибка обработки платежа. Пожалуйста, попробуйте еще раз.",
+                    'error': f"Ошибка запроса: {str(e)}"
                 })
+
+            except ForbiddenError as e:
+                logger.error(f"YooKassa ForbiddenError: {e}")
+                # Очищаем возможные проблемы с сессией
+                if 'cart' in request.session:
+                    del request.session['cart']
+
+                messages.error(request, 'Ошибка авторизации платежной системы. Проверьте настройки YooKassa.')
+                return render(request, 'orders/create_orders.html', {
+                    'form': form,
+                    'cart': cart,
+                    'error': "Ошибка авторизации платежной системы"
+                })
+
+            except NotFoundError as e:
+                logger.error(f"YooKassa NotFoundError: {e}")
+                messages.error(request, 'Платежная система временно недоступна')
+                return render(request, 'orders/create_orders.html', {
+                    'form': form,
+                    'cart': cart,
+                    'error': "Платежная система временно недоступна"
+                })
+
+            except Exception as e:
+                logger.error(f"Unexpected error: {e}")
+                messages.error(request, 'Произошла непредвиденная ошибка')
+                return render(request, 'orders/create_orders.html', {
+                    'form': form,
+                    'cart': cart,
+                    'error': "Произошла непредвиденная ошибка"
+                })
+
+
+
+            # except Exception as e:
+            #     logger.error(f"YooKassa error: {str(e)}")
+            #     return render(request, 'orders/create_orders.html', {
+            #         'form': form,
+            #         'cart': cart,
+            #         'error': "Ошибка обработки платежа. Пожалуйста, попробуйте еще раз.",
+            #     })
 
     # Заполняем форму начальными данными пользователя
     form = OrderForm(initial={
@@ -102,21 +153,24 @@ def create_order(request):
         'cart': cart,
     })
 
-@login_required(login_url='users/login/')
+@login_required(login_url='/users/login/')
 def order_success(request):
-    # Очищаем корзину
-    cart = Cart(request)
-    cart.clear()
-    del request.session['cart']
-    
     order_id = request.GET.get('order_id')
-    context = {}
-    
+
     if order_id:
         try:
-            order = Order.objects.get(id=order_id)
-            context['order'] = order
+            order = Order.objects.get(id=order_id, user=request.user)
+            order.paid = True  # Помечаем заказ как оплаченный
+            order.status = 'paid'  # Меняем статус
+            order.save()
         except Order.DoesNotExist:
             pass
-    
+
+    # Очищаем корзину
+    if 'cart' in request.session:
+        cart = Cart(request)
+        cart.clear()
+        del request.session['cart']
+
+    context = {'order_id': order_id}
     return render(request, 'orders/order_success.html', context)
